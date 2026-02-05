@@ -1,5 +1,7 @@
 'use client';
 
+import MathText from './MathText';
+
 interface NoteCardProps {
   title: string;
   content: string;
@@ -13,14 +15,14 @@ export default function NoteCard({ title, content, type = 'info' }: NoteCardProp
     important: 'bg-red-50 border-red-300 text-red-900 from-red-50 to-pink-50',
     tip: 'bg-green-50 border-green-300 text-green-900 from-green-50 to-emerald-50',
   };
-  
+
   const icons = {
     info: 'ℹ️',
     warning: '⚠️',
     important: '❗',
     tip: '💡',
   };
-  
+
   const contentLines = content.split('\n');
 
   return (
@@ -31,9 +33,9 @@ export default function NoteCard({ title, content, type = 'info' }: NoteCardProp
       </div>
       <div className="ml-10 space-y-2">
         {contentLines.map((line, idx) => (
-          <p key={idx} className="text-sm font-semibold text-gray-900 leading-relaxed whitespace-pre-wrap">
-            {line}
-          </p>
+          <div key={idx} className="text-sm font-semibold text-gray-900 leading-relaxed whitespace-pre-wrap">
+            <MathText text={line} />
+          </div>
         ))}
       </div>
     </div>

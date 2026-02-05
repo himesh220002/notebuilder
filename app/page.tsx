@@ -1,3 +1,4 @@
+import { Binary, TrendingUp, Layers, ListOrdered } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
         </header>
 
         {/* Navigation Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 mb-20">
           {/* Chapter 1 Card */}
           <Link href="/maths11_notes/chapters/chapter1" className="group">
             <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-blue-100 hover:border-blue-500">
@@ -25,7 +26,7 @@ export default function Home() {
                   <h2 className="text-5xl font-black text-blue-900 mb-2">Chapter 1</h2>
                   <h3 className="text-2xl font-bold text-gray-800">Numbers - Binary & Decimal Systems</h3>
                 </div>
-                <span className="text-7xl">📊</span>
+                <Binary className="w-20 h-20 text-blue-500 group-hover:scale-110 transition-transform" />
               </div>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
                 Master number system conversions and binary arithmetic operations with comprehensive examples and practice problems.
@@ -42,7 +43,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Chapter 2 Card (Coming Soon) */}
           {/* Chapter 2 Card */}
           <Link href="/maths11_notes/chapters/chapter2" className="group">
             <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-indigo-100 hover:border-indigo-500">
@@ -51,7 +51,7 @@ export default function Home() {
                   <h2 className="text-5xl font-black text-indigo-900 mb-2">Chapter 2</h2>
                   <h3 className="text-2xl font-bold text-gray-800">Indices & Logarithms</h3>
                 </div>
-                <span className="text-7xl">�</span>
+                <TrendingUp className="w-20 h-20 text-indigo-500 group-hover:scale-110 transition-transform" />
               </div>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
                 Understand the power of exponents, indices rules, and the fundamentals of logarithms.
@@ -62,6 +62,56 @@ export default function Home() {
                 <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Practice</span>
               </div>
               <div className="mt-10 text-indigo-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 3 Card */}
+          <Link href="/maths11_notes/chapters/chapter3" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-emerald-100 hover:border-emerald-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 3</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Sets, Relations & Functions</h3>
+                </div>
+                <Layers className="w-20 h-20 text-emerald-500 group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Master the language of mathematics through set theory, logical relations, and functional mappings.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 bg-green-100 text-green-900 rounded-full text-sm font-bold border border-green-300">Sets</span>
+                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Functions</span>
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">Graphs</span>
+              </div>
+              <div className="mt-10 text-emerald-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 4 Card */}
+          <Link href="/maths11_notes/chapters/chapter4" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-emerald-100 hover:border-emerald-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 4</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Sequences & Series</h3>
+                </div>
+                <ListOrdered className="w-20 h-20 text-emerald-500 group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Master the language of mathematics through sequences and series.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 bg-green-100 text-green-900 rounded-full text-sm font-bold border border-green-300">Sequences</span>
+                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Series</span>
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">Graphs</span>
+              </div>
+              <div className="mt-10 text-emerald-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>

@@ -62,8 +62,8 @@ export default function ProblemList({ problems, title = 'Problems', chapterId }:
             <div
               key={item.id}
               className={`p-5 border-l-4 rounded-lg shadow-md transition-all duration-300 ${isCompleted
-                  ? 'border-gray-400 bg-gray-50 opacity-75'
-                  : 'border-green-500 bg-gradient-to-r from-green-50 to-emerald-50 hover:shadow-lg'
+                ? 'border-gray-400 bg-gray-50 opacity-75'
+                : 'border-green-500 bg-gradient-to-r from-green-50 to-emerald-50 hover:shadow-lg'
                 }`}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
@@ -83,7 +83,7 @@ export default function ProblemList({ problems, title = 'Problems', chapterId }:
                     <div className="flex-1">
                       <div className="flex items-start gap-2 mb-2">
                         <span className={`font-bold text-lg mt-0.5 ${isCompleted ? 'text-gray-500 line-through' : 'text-green-600'}`}>
-                          {parseInt(item.id)}.
+                          {idx + 1}.
                         </span>
                         <div className={`font-semibold text-base leading-relaxed ${isCompleted ? 'text-gray-500' : 'text-gray-800'}`}>
                           <MathText text={item.question} />
@@ -93,8 +93,8 @@ export default function ProblemList({ problems, title = 'Problems', chapterId }:
                       {item.solution && (
                         <details className="mt-4 ml-2">
                           <summary className={`cursor-pointer font-semibold py-2 px-3 rounded border inline-block transition-colors text-sm ${isCompleted
-                              ? 'bg-gray-100 text-gray-500 border-gray-300'
-                              : 'bg-white text-green-700 hover:text-green-800 border-green-200'
+                            ? 'bg-gray-100 text-gray-500 border-gray-300'
+                            : 'bg-white text-green-700 hover:text-green-800 border-green-200'
                             }`}>
                             ✓ Show Solution
                           </summary>
@@ -112,9 +112,9 @@ export default function ProblemList({ problems, title = 'Problems', chapterId }:
                 </div>
                 {item.difficulty && (
                   <span className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap self-start ${isCompleted ? 'bg-gray-200 text-gray-600' :
-                      item.difficulty === 'easy' ? 'bg-green-200 text-green-800' :
-                        item.difficulty === 'medium' ? 'bg-yellow-200 text-yellow-800' :
-                          'bg-red-200 text-red-800'
+                    item.difficulty === 'easy' ? 'bg-green-200 text-green-800' :
+                      item.difficulty === 'medium' ? 'bg-yellow-200 text-yellow-800' :
+                        'bg-red-200 text-red-800'
                     }`}>
                     {item.difficulty.toUpperCase()}
                   </span>

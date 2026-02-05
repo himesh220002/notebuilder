@@ -93,8 +93,8 @@ export default function MathText({ text, className = '', block = false }: MathTe
     const renderContent = () => {
         // Handle explicit block mode requested via prop
         if (block) {
-            // If the text comes wrapped in $...$ or $$...$$, strip them for processing
             let contentToRender = text.trim();
+            // Basic cleanup to remove wrapping delimiters if present
             if (contentToRender.startsWith('$$') && contentToRender.endsWith('$$')) {
                 contentToRender = contentToRender.slice(2, -2);
             } else if (contentToRender.startsWith('$') && contentToRender.endsWith('$')) {
@@ -115,16 +115,35 @@ export default function MathText({ text, className = '', block = false }: MathTe
         }
 
         // Inline / Mixed content mode
-        // Split by '$' to find math segments
-        const parts = text.split('$');
+        // If the entire text is wrapped in '$' (e.g. "$x+y$"), strip it to avoid empty start/end parts
+        let mixedText = text;
+        if (mixedText.startsWith('$') && mixedText.endsWith('$') && mixedText.split('$').length === 3) {
+            // It's a single math expression wrapped in $
+            mixedText = mixedText.slice(1, -1);
+            return (
+                <span
+                    className={className}
+                    dangerouslySetInnerHTML={{
+                        __html: katex.renderToString(processMath(mixedText), {
+                            throwOnError: false,
+                            displayMode: false
+                        })
+                    }}
+                />
+            );
+        }
 
+        const parts = mixedText.split('$');
         return (
             <span className={className}>
                 {parts.map((part, index) => {
-                    // Even index = Text, Odd index = Math (assuming valid pairing)
+                    // Even index = Text, Odd index = Math
                     if (index % 2 === 0) {
+                        // Filter out orphan '$' if any weirdness happened
                         return <span key={index}>{part}</span>;
                     } else {
+                        // Math part: ensure we don't accidentally pass empty
+                        if (!part.trim()) return null;
                         return (
                             <span
                                 key={index}
