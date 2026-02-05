@@ -18,10 +18,92 @@ export const formulaText = {
     partsOfLog: "For a number $N$, $\\log N = \\text{Characteristic} + \\text{Mantissa}$",
     characteristicDef: "The integral (integer) part of the logarithm. It depends on the position of the decimal point.",
     mantissaDef: "The fractional (decimal) part of the logarithm. It is always positive and depends on the digits of the number.",
-    charRules: "1. If $N > 1$: Characteristic = (Number of digits before decimal) - 1\n2. If $0 < N < 1$: Characteristic = -(Number of zeros after decimal before first non-zero digit + 1). Often written with a bar, e.g., $\\bar{1}, \\bar{2}$.",
+    charRules: "1. If N > 1: Characteristic = (Number of digits before decimal) - 1\n2. If 0 < N < 1: Characteristic = -(Number of zeros after decimal before first non-zero digit + 1). Often written with a bar, e.g., $\\bar{1}, \\bar{2}$.",
     antilogDef: "The number whose logarithm is given. If $\\log x = y$, then $x = \\text{antilog}(y)$.",
     antilogCalc: "$x = 10^{\\text{Characteristic}} \\times 10^{\\text{Mantissa}}$ (using log tables for mantissa)"
 };
+
+export const logExamples = [
+    {
+        val: "456789.23",
+        step: "Digits before decimal = 6",
+        char: "6 - 1 = 5",
+        expl: "Decimal is after 9 (pos 6). Standard form: $4.56... \\times 10^5$."
+    },
+    {
+        val: "0.00567",
+        step: "Zeros after decimal = 2",
+        char: "-(2 + 1) = -3 (\\bar{3})",
+        expl: "First non-zero is 5 at 3rd decimal place. Standard form: $5.67 \\times 10^{-3}$."
+    },
+    {
+        val: "27.5",
+        step: "Digits before decimal = 2",
+        char: "2 - 1 = 1",
+        expl: "Decimal after 7 (pos 2). Standard form: $2.75 \\times 10^1$."
+    },
+    {
+        val: "0.85",
+        step: "Zeros after decimal = 0",
+        char: "-(0 + 1) = -1 (\\bar{1})",
+        expl: "First non-zero is 8 at 1st decimal place. Standard form: $8.5 \\times 10^{-1}$."
+    }
+];
+
+export const antilogExamples = [
+    {
+        logVal: "2.3010",
+        type: "Example 1",
+        steps: [
+            "Split: $2.3010 = 2 + 0.3010$",
+            "Characteristic = 2, Mantissa = 0.3010",
+            "From antilog table: antilog(0.3010) approx 2.0",
+            "Apply characteristic: $2.0 times 10^2 = 200$",
+            "Answer: 200"
+        ]
+    },
+    {
+        logVal: "1.4771",
+        type: "Example 2",
+        steps: [
+            "Split: $1.4771 = 1 + 0.4771$",
+            "Characteristic = 1, Mantissa = 0.4771",
+            "From table: antilog(0.4771) approx 3.0",
+            "Apply characteristic: $3.0 times 10^1 = 30$",
+            "Answer: 30"
+        ]
+    },
+    {
+        logVal: "3.6990",
+        type: "Example 3",
+        steps: [
+            "Split: $3.6990 = 3 + 0.6990$",
+            "Characteristic = 3, Mantissa = 0.6990",
+            "From table: antilog(0.6990) approx 5.0",
+            "Apply characteristic: $5.0 times 10^3 = 5000$",
+            "Answer: 5000"
+        ]
+    },
+    {
+        logVal: "\\bar{3}.4771",
+        type: "Negative Characteristic",
+        steps: [
+            "1. Characteristic = $\\bar{3}$ (-3)",
+            "2. Mantissa = .4771 (Table value approx 3.0)",
+            "3. Apply char: $3.0 times 10^{-3} = 0.003$"
+        ]
+    },
+    {
+        logVal: "-2.5",
+        type: "Negative Log (Conversion)",
+        steps: [
+            "1. $\\log x = -2.5$. Convert to positive mantissa.",
+            "2. $-2.5 = -3 + 0.5 = \\bar{3}.5000$",
+            "3. Char = $\\bar{3}$, Mantissa = .5000",
+            "4. Table(.50) approx 3.162. Result: $0.003162$"
+        ]
+    }
+];
 
 export const problems = [
     { id: "1", question: "Simplify: $2^3 \\times 2^4$", solution: "$2^3 \\times 2^4 = 2^{3+4} = 2^7 = 128$", difficulty: "easy" as const },

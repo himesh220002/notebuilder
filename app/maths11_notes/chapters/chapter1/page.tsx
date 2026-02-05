@@ -254,12 +254,12 @@ Every number has unique representation in both systems"
               Converting a decimal number to binary involves repeatedly dividing by 2 and reading remainders from bottom to top.
             </p>
 
-            <FormulaBlock 
-              formula="Decimal₁₀ = Remainder₁ × 2⁰ + Remainder₂ × 2¹ + Remainder₃ × 2² + ... (Read Remainders Bottom-to-Top)" 
-              block 
+            <FormulaBlock
+              formula="Decimal₁₀ = Remainder₁ × 2⁰ + Remainder₂ × 2¹ + Remainder₃ × 2² + ... (Read Remainders Bottom-to-Top)"
+              block
               title="Conversion Formula"
             />
-            
+
             <div className="my-8">
               <NoteCard
                 title="Method: Repeated Division by 2"
@@ -311,9 +311,9 @@ Every number has unique representation in both systems"
               Converting binary to decimal involves summing the powers of 2 where 1s appear in the binary number.
             </p>
 
-            <FormulaBlock 
-              formula="Binary₂ = (bₙ × 2ⁿ) + (bₙ₋₁ × 2ⁿ⁻¹) + ... + (b₁ × 2¹) + (b₀ × 2⁰), where bᵢ ∈ {0,1}" 
-              block 
+            <FormulaBlock
+              formula="Binary₂ = (bₙ × 2ⁿ) + (bₙ₋₁ × 2ⁿ⁻¹) + ... + (b₁ × 2¹) + (b₀ × 2⁰), where bᵢ ∈ {0,1}"
+              block
               title="Conversion Formula"
             />
 
@@ -366,9 +366,9 @@ Every number has unique representation in both systems"
               Binary addition follows simple rules similar to decimal addition, but with base 2.
             </p>
 
-            <FormulaBlock 
-              formula="A₂ + B₂ = Sum₂ | Rules: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (write 0, carry 1)" 
-              block 
+            <FormulaBlock
+              formula="A₂ + B₂ = Sum₂ | Rules: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (write 0, carry 1)"
+              block
               title="Addition Formula"
             />
 
@@ -409,9 +409,9 @@ Every number has unique representation in both systems"
               Binary subtraction uses borrowing similar to decimal subtraction when needed.
             </p>
 
-            <FormulaBlock 
-              formula="A₂ - B₂ = Difference₂ | Rules: 0-0=0, 1-0=1, 1-1=0, 0-1=Borrow (10-1=1)" 
-              block 
+            <FormulaBlock
+              formula="A₂ - B₂ = Difference₂ | Rules: 0-0=0, 1-0=1, 1-1=0, 0-1=Borrow (10-1=1)"
+              block
               title="Subtraction Formula"
             />
 
@@ -460,9 +460,9 @@ Every number has unique representation in both systems"
               Binary multiplication is simpler than decimal multiplication since we only multiply by 0 or 1.
             </p>
 
-            <FormulaBlock 
-              formula="A₂ × B₂ = Product₂ | Rules: 0×X=0, 1×X=X, Add shifted partial products" 
-              block 
+            <FormulaBlock
+              formula="A₂ × B₂ = Product₂ | Rules: 0×X=0, 1×X=X, Add shifted partial products"
+              block
               title="Multiplication Formula"
             />
 
@@ -507,9 +507,9 @@ Every number has unique representation in both systems"
               Binary division uses long division similar to decimal division, but with base 2 logic.
             </p>
 
-            <FormulaBlock 
-              formula="A₂ ÷ B₂ = Quotient₂ with Remainder₂ | Dividend = (Divisor × Quotient) + Remainder" 
-              block 
+            <FormulaBlock
+              formula="A₂ ÷ B₂ = Quotient₂ with Remainder₂ | Dividend = (Divisor × Quotient) + Remainder"
+              block
               title="Division Formula"
             />
 
@@ -542,7 +542,7 @@ Every number has unique representation in both systems"
           {/* Topic 8: Universal Tips & Verification */}
           <article className="mb-12 bg-white rounded-xl shadow-md p-8 border-l-4 border-cyan-500">
             <h3 className="text-3xl font-bold text-cyan-900 mb-8">8. Universal Tips & Verification</h3>
-            
+
             <div className="space-y-6">
               <NoteCard
                 title="Memorization: Powers of 2"
@@ -577,7 +577,7 @@ Every number has unique representation in both systems"
             <span className="text-4xl">❓</span>
             Important Questions & Problems
           </h2>
-          <ProblemList problems={problems} title="Chapter 1 Practice Problems" />
+          <ProblemList problems={problems} chapterId="chapter1" title="Chapter 1 Practice Problems" />
         </section>
 
         {/* Summary Section */}
