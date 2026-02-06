@@ -2,7 +2,7 @@
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 
-type FunctionType = 'identity' | 'constant' | 'modulus' | 'square' | 'cube' | 'signum' | 'step' | 'exponential';
+type FunctionType = 'identity' | 'constant' | 'modulus' | 'square' | 'cube' | 'signum' | 'step' | 'exponential' | 'reciprocal' | 'quadratic';
 
 interface FunctionGraphProps {
     type: FunctionType;
@@ -34,6 +34,10 @@ export default function FunctionGraph({ type, title }: FunctionGraphProps) {
                     break;
                 case 'step': y = Math.floor(cleanX); break;
                 case 'exponential': y = Math.pow(2, cleanX); break; // using 2^x
+                case 'reciprocal':
+                    y = cleanX === 0 ? NaN : 1 / cleanX;
+                    break;
+                case 'quadratic': y = cleanX * cleanX + 2 * cleanX + 1; break; // (x+1)^2
             }
             data.push({ x: cleanX, y });
         }
@@ -52,7 +56,9 @@ export default function FunctionGraph({ type, title }: FunctionGraphProps) {
         cube: { color: "#f59e0b", name: "f(x) = x³" },
         signum: { color: "#ec4899", name: "f(x) = sgn(x)" },
         step: { color: "#6366f1", name: "f(x) = [x]" },
-        exponential: { color: "#14b8a6", name: "f(x) = 2ˣ" }
+        exponential: { color: "#14b8a6", name: "f(x) = 2ˣ" },
+        reciprocal: { color: "#f43f5e", name: "f(x) = 1/x" },
+        quadratic: { color: "#8b5cf6", name: "f(x) = x² + 2x + 1" }
     }[safeType] || { color: "#000", name: "Function" };
 
     return (

@@ -1,4 +1,4 @@
-import { Binary, TrendingUp, Layers, ListOrdered, Dices } from "lucide-react";
+import { Binary, TrendingUp, Layers, ListOrdered, Dices, Activity } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -143,6 +143,30 @@ export default function Home() {
             </div>
           </Link>
 
+          {/* Chapter 6 Card */}
+          <Link href="/maths11_notes/chapters/chapter6" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-emerald-100 hover:border-emerald-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 6</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Functions</h3>
+                </div>
+                <Activity className="w-20 h-20 text-emerald-500 group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Understand functional mappings, specialized types, and real-world applications.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 bg-green-100 text-green-900 rounded-full text-sm font-bold border border-green-300">Domain/Range</span>
+                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Standard Graphs</span>
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">Applied Math</span>
+              </div>
+              <div className="mt-10 text-emerald-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Features Section */}
@@ -188,7 +212,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="text-center py-16 border-t-2 border-gray-400 bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 rounded-t-2xl">
-          <p className="text-gray-700 text-xl font-bold mb-2">© 2026 Mathematics Notes</p>
+          <p className="text-gray-700 text-xl font-bold mb-2">© 2026 Notebuilder App made for quick visual and revision of notes</p>
           <p className="text-gray-600 text-lg font-semibold">Class 11 Applied Mathematics</p>
           <p className="text-gray-500 text-base mt-4">Comprehensive learning platform for mathematics excellence</p>
         </footer>
