@@ -81,7 +81,7 @@ export default function Chapter2() {
             <p className="text-gray-700 mb-8 text-lg leading-relaxed">
               These seven fundamental laws are your toolkit for manipulating and simplifying exponential expressions.
             </p>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {rules.map((item) => (
                 <RuleCard key={item.rule} {...item} />
               ))}
@@ -191,7 +191,7 @@ export default function Chapter2() {
 
               <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h4 className="font-bold text-lg text-green-900 mb-4">Type 3: Combined Operations</h4>
-                <p className="text-gray-700 mb-3">Mix multiplication, division, roots, and fractional exponents.</p>
+                <p className="text-gray-700 mb-3">Mix <MathText text="$\times$, $\div$" />, roots, and fractional exponents.</p>
                 <p className="text-gray-700 font-mono bg-white p-3 rounded text-sm">
                   Example: <MathText text="$\\sqrt[3]{8} \\times \\sqrt{16} = 2 \\times 4 = 8$" />
                 </p>
@@ -215,6 +215,22 @@ export default function Chapter2() {
               <li>✓ Exponentials grow/decay rapidly; logarithms grow slowly</li>
             </ul>
           </div>
+        </section>
+
+        <section className="mb-20">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 flex items-center gap-3">
+            <span className="text-4xl">🛠️</span>Properties of Logarithms
+          </h2>
+          <article className="bg-white rounded-xl shadow-md p-8 border-l-4 border-indigo-500">
+            <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+              These fundamental properties allow you to split, combine, and simplify logarithmic expressions.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {logRules.map((item) => (
+                <RuleCard key={item.rule} {...item} />
+              ))}
+            </div>
+          </article>
         </section>
 
         <section className="mb-20">

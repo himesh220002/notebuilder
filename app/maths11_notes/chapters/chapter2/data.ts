@@ -176,5 +176,6 @@ export const logRules = [
     { rule: "Definition", formula: "$\\log_a N = x \\iff a^x = N$", note: "Logarithm is essentially finding the exponent.", color: "indigo" },
     { rule: "Product Rule", formula: "$\\log_a(mn) = \\log_a m + \\log_a n$", note: "Log of product is sum of logs.", color: "blue" },
     { rule: "Quotient Rule", formula: "$\\log_a(\\frac{m}{n}) = \\log_a m - \\log_a n$", note: "Log of quotient is difference of logs.", color: "green" },
-    { rule: "Power Rule", formula: "$\\log_a(m^n) = n \\cdot \\log_a m$", note: "The exponent 'comes down' to the front.", color: "purple" }
+    { rule: "Power Rule", formula: "$\\log_a(m^n) = n \\cdot \\log_a m$", note: "The exponent 'comes down' to the front.", color: "purple" },
+    { rule: "Change of Base", formula: "$\\log_a b = \\dfrac{\\log_c b}{\\log_c a}$", note: "Useful for calculating logs with calculators (use base 10 or e).", color: "cyan" }
 ];

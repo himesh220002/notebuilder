@@ -80,10 +80,14 @@ export default function MathText({ text, className = '', block = false }: MathTe
         // We iterate keys sorted by length desc to prevent substring issues (though \b handles most)
         Object.keys(keywordMap).forEach((keyword) => {
             const replacement = keywordMap[keyword];
-            // Regex: \bkeyword\b ensures "times" is matched but "timestamp" is not
-            // We also check if it's NOT already preceded by \ (checking for existing commands)
-            const regex = new RegExp(`(?<!\\\\)\\b${keyword}\\b`, 'g');
-            processed = processed.replace(regex, replacement);
+            // Regex: checks for optional preceding backslash
+            const regex = new RegExp(`(\\\\)?\\b${keyword}\\b`, 'g');
+            processed = processed.replace(regex, (match, prefix) => {
+                // If there's a preceding backslash, it's already an escaped command; leave it alone
+                if (prefix) return match;
+                // Otherwise replace the keyword with its LaTeX command
+                return replacement;
+            });
         });
 
         return processed;
