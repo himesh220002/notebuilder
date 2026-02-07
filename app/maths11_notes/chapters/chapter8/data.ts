@@ -5,9 +5,12 @@ export const formulaText = {
     standardDerivatives: {
         algebraic: [
             { func: "$\\frac{d}{dx}(x^n)$", res: "$nx^{n-1}$", example: "$\\frac{d}{dx}(x^5) = 5x^4$" },
-            { func: "$\\frac{d}{dx}(\\text{constant})$", res: "$0$", example: "$\\frac{d}{dx}(5) = 0$" },
-            { func: "$\\frac{d}{dx}(\\sqrt{x})$", res: "$\\frac{1}{2\\sqrt{x}}$", example: "$\\text{Direct formula}$" },
-            { func: "$\\frac{d}{dx}(\\frac{1}{x})$", res: "$-\\frac{1}{x^2}$", example: "$\\text{Direct formula}$" }
+            { func: "$\\frac{d}{dx}((ax+b)^n)$", res: "$n(ax+b)^{n-1} \\cdot a$", example: "$\\frac{d}{dx}((2x+3)^5) = 10(2x+3)^4$" },
+            { func: "$\\frac{d}{dx}([f(x)]^n)$", res: "$n[f(x)]^{n-1} f'(x)$", example: "$\\frac{d}{dx}(\\sin^3 x) = 3\\sin^2 x \\cos x$" },
+            { func: "$\\frac{d}{dx}(a_n x^n + \\dots)$", res: "$na_n x^{n-1} + \\dots$", example: "$\\frac{d}{dx}(3x^2+5x+1) = 6x+5$" },
+            { func: "$\\frac{d}{dx}(\\text{constant})$", res: "$0$", example: "$\\frac{d}{dx}(100) = 0$" },
+            { func: "$\\frac{d}{dx}(\\sqrt{x})$", res: "$\\frac{1}{2\\sqrt{x}}$", example: "$\\frac{d}{dx}(\\sqrt{x^2+1}) = \\frac{x}{\\sqrt{x^2+1}}$" },
+            { func: "$\\frac{d}{dx}(\\frac{1}{x})$", res: "$-\\frac{1}{x^2}$", example: "$\\frac{d}{dx}(\\frac{1}{x^2+1}) = -\\frac{2x}{(x^2+1)^2}$" }
         ],
         exponential: [
             { func: "$\\frac{d}{dx}(e^x)$", res: "$e^x$", example: "$\\frac{d}{dx}(e^{2x}) = 2e^{2x}$" },
@@ -23,7 +26,7 @@ export const formulaText = {
         { name: "Sum/Difference", rule: "$\\frac{d}{dx}[u \\pm v] = u' \\pm v'$", example: "$\\frac{d}{dx}(x^2 + \\sin x) = 2x + \\cos x$" },
         { name: "Product Rule", rule: "$\\frac{d}{dx}(uv) = u'v + uv'$", example: "$\\frac{d}{dx}(x \\sin x) = 1 \\cdot \\sin x + x \\cos x$" },
         { name: "Quotient Rule", rule: "$\\frac{d}{dx}(\\frac{u}{v}) = \\frac{u'v - uv'}{v^2}$", example: "$\\frac{d}{dx}(\\frac{\\sin x}{x}) = \\frac{x \\cos x - \\sin x}{x^2}$" },
-        { name: "Chain Rule", rule: "$\\frac{dy}{dx} = \\frac{dy}{dt} \\cdot \\frac{dt}{dx}$", example: "$\\text{See below}$" }
+        { name: "Chain Rule", rule: "$\\frac{dy}{dx} = \\frac{dy}{dt} \\cdot \\frac{dt}{dx}$", example: "$\\frac{d}{dx}(\\log(\\sin x)) = \\cot x$" }
     ],
 
     compositeFunc: {
