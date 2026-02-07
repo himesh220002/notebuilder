@@ -82,6 +82,24 @@ export const problems = [
         question: "A die is thrown twice and the sum of numbers appearing is observed to be 6. What is the conditional probability that the number 4 has appeared at least once?",
         solution: "1. E (sum 6) = {(1,5), (2,4), (3,3), (4,2), (5,1)}. n(E)=5.\n2. F (4 at least once) = {(4,1), (4,2), (4,3), (4,4), (4,5), (4,6), (1,4), (2,4), (3,4), (5,4), (6,4)}.\n3. $E \\cap F = \\{(2,4), (4,2)\\}$. $n(E \\cap F) = 2$.\n4. $P(F|E) = \\frac{P(E \\cap F)}{P(E)} = \\frac{2/36}{5/36} = 2/5$",
         difficulty: "medium" as const
+    },
+    {
+        id: "prob_multi_1",
+        question: "Two cards are drawn at random and without replacement from a pack of 52 playing cards. Find the probability that both the cards are black.",
+        solution: "1. $P(B_1) = 26/52 = 1/2$\n2. $P(B_2|B_1) = 25/51$ (since one black card is gone)\n3. $P(B_1 \\cap B_2) = P(B_1)P(B_2|B_1) = \\frac{1}{2} \\times \\frac{25}{51} = \\frac{25}{102}$",
+        difficulty: "easy" as const
+    },
+    {
+        id: "prob_total_1",
+        question: "In a class, 40% students study Math, 25% study Bio and 15% study both. One student is selected at random. (i) If he studies Math, what is prob he studies Bio? (ii) If he studies Bio, prob he studies Math?",
+        solution: "1. $P(M)=0.4, P(B)=0.25, P(M \\cap B)=0.15$\n2. (i) $P(B|M) = \\frac{P(B \\cap M)}{P(M)} = \\frac{0.15}{0.40} = \\frac{15}{40} = 3/8$\n3. (ii) $P(M|B) = \\frac{P(M \\cap B)}{P(B)} = \\frac{0.15}{0.25} = \\frac{15}{25} = 3/5$",
+        difficulty: "medium" as const
+    },
+    {
+        id: "prob_indep_1",
+        question: "A die is tossed thrice. Find the probability of getting an odd number at least once.",
+        solution: "1. P(Odd) in one toss = 3/6 = 1/2. P(Even) = 1/2.\n2. P(At least one Odd) = 1 - P(None Odd) = 1 - P(All Even)\n3. Since tosses independent: P(All Even) = $P(E)P(E)P(E) = (1/2)^3 = 1/8$\n4. Ans: $1 - 1/8 = 7/8$",
+        difficulty: "medium" as const
     }
 ];
 
