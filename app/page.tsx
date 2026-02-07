@@ -167,6 +167,30 @@ export default function Home() {
               </div>
             </div>
           </Link>
+          {/* Chapter 7 Card */}
+          <Link href="/maths11_notes/chapters/chapter7" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-violet-100 hover:border-violet-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-violet-900 mb-2">Chapter 7</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Limits & Continuity</h3>
+                </div>
+                <Activity className="w-20 h-20 text-violet-500 group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Explore the foundational concepts of Calculus: Limits, Continuity, and Derivative.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 bg-violet-100 text-violet-900 rounded-full text-sm font-bold border border-violet-300">Limits</span>
+                <span className="px-4 py-2 bg-purple-100 text-purple-900 rounded-full text-sm font-bold border border-purple-300">Continuity</span>
+                <span className="px-4 py-2 bg-fuchsia-100 text-fuchsia-900 rounded-full text-sm font-bold border border-fuchsia-300">Graphs</span>
+              </div>
+              <div className="mt-10 text-violet-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Features Section */}
