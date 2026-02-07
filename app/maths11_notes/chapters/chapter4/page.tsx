@@ -7,18 +7,16 @@ import FormulaBlock from "@/components/FormulaBlock";
 import NoteCard from "@/components/NoteCard";
 import ProblemList from "@/components/ProblemList";
 import ApGpVisual from "@/components/ApGpVisual";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { formulaText, problems, examProblems } from "./data";
 
 export default function SequenceAndSeries() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
+            <ChapterNavbar currentChapter={4} totalChapters={10} />
             {/* Header */}
             <header className="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 shadow-sm border-b border-emerald-200">
                 <div className="max-w-[1200px] mx-auto">
-                    <Link href="/" className="inline-flex items-center text-emerald-700 hover:text-emerald-900 mb-4 transition-colors font-semibold">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Back to Chapters
-                    </Link>
                     <h1 className="text-4xl font-extrabold tracking-tight text-emerald-900">Sequence & Series</h1>
                     <p className="mt-2 text-emerald-800 text-lg">Arithmetic & Geometric Progressions, Special Series (Applied Math)</p>
                 </div>

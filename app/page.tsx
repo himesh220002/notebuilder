@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -254,7 +254,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-gray-800">Binomial Distribution</h3>
                 </div>
                 <div className="bg-emerald-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-emerald-200 transition-colors">
-                  <Dices className="w-10 h-10 text-emerald-600" />
+                  <BarChart3 className="w-10 h-10 text-emerald-600" />
                 </div>
               </div>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">

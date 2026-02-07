@@ -8,17 +8,14 @@ import ProblemList from "@/components/ProblemList";
 import VennDiagram from "@/components/VennDiagram";
 import FunctionGraph from "@/components/FunctionGraph";
 import CompositeFunctionVisual from "@/components/CompositeFunctionVisual";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { formulaText, setLaws, functionTypes, problems, compositeExamples, examProblems } from "./data";
 
 export default function Chapter3() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+            <ChapterNavbar currentChapter={3} totalChapters={10} />
             <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-16 py-16">
-                <div className="mb-8">
-                    <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition duration-200 shadow-md hover:shadow-lg">
-                        <span className="text-xl">←</span>Back to Home
-                    </Link>
-                </div>
 
                 <header className="mb-16 pb-8 border-b-4 border-indigo-200 text-center">
                     <h1 className="text-5xl md:text-6xl font-black text-indigo-900 mb-4">

@@ -5,6 +5,7 @@ import MindMapViewer from "@/components/MindMapViewer";
 import FormulaBlock from "@/components/FormulaBlock";
 import ProblemList from "@/components/ProblemList";
 import NoteCard from "@/components/NoteCard";
+import ChapterNavbar from "@/components/ChapterNavbar";
 
 export default function Chapter1() {
   // Mind Map Data Structure
@@ -177,17 +178,8 @@ export default function Chapter1() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <ChapterNavbar currentChapter={1} totalChapters={10} />
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Back Navigation Button */}
-        <div className="mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-200 shadow-md hover:shadow-lg"
-          >
-            <span className="text-xl">←</span>
-            Back to Home
-          </Link>
-        </div>
 
         {/* Header */}
         <header className="mb-16 pb-8 border-b-4 border-blue-200 text-center">

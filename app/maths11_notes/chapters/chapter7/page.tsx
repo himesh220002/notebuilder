@@ -9,18 +9,16 @@ import ProblemList from "@/components/ProblemList";
 import LimitIntroVisual from "@/components/LimitIntroVisual";
 import ContinuityVisual from "@/components/ContinuityVisual";
 import ContinuityExamplesGallery from "@/components/ContinuityExamplesGallery";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { formulaText, problems, examProblems, evaluationMethods } from "./data";
 
 export default function LimitsContinuityChapter() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
+            <ChapterNavbar currentChapter={7} totalChapters={10} />
             {/* Header */}
             <header className="bg-gradient-to-r from-violet-600 to-purple-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">
-                    <Link href="/" className="inline-flex items-center text-violet-100 hover:text-white mb-4 transition-colors font-semibold">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Back to Chapters
-                    </Link>
                     <h1 className="text-4xl font-extrabold tracking-tight">Limits & Continuity</h1>
                     <p className="mt-2 text-violet-100/90 text-lg">Applied Mathematics Class 11 - Chapter 7</p>
                 </div>

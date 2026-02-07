@@ -12,18 +12,16 @@ import DomainRangeVisual from "@/components/DomainRangeVisual";
 import MappingDiagramVisual from "@/components/MappingDiagramVisual";
 import ExponentialGraph from "@/components/ExponentialGraph";
 import LogarithmicGraph from "@/components/LogarithmicGraph";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { formulaText, problems, examProblems, classicProblems, domainRangeLogic } from "./data";
 
 export default function FunctionsChapter() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
+            <ChapterNavbar currentChapter={6} totalChapters={10} />
             {/* Header */}
             <header className="bg-gradient-to-r from-emerald-600 to-teal-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">
-                    <Link href="/" className="inline-flex items-center text-emerald-100 hover:text-white mb-4 transition-colors font-semibold">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Back to Chapters
-                    </Link>
                     <h1 className="text-4xl font-extrabold tracking-tight">Functions</h1>
                     <p className="mt-2 text-emerald-100/90 text-lg">Applied Mathematics Class 11 - Chapter 6</p>
                 </div>

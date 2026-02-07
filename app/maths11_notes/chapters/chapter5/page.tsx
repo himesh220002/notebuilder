@@ -7,18 +7,16 @@ import FormulaBlock from "@/components/FormulaBlock";
 import NoteCard from "@/components/NoteCard";
 import ProblemList from "@/components/ProblemList";
 import CountingVisual, { CircularVisual, SelectionVisual } from "@/components/CountingVisual";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { formulaText, problems, examProblems, classicProblems } from "./data";
 
 export default function PermutationsAndCombinations() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
+            <ChapterNavbar currentChapter={5} totalChapters={10} />
             {/* Header */}
             <header className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">
-                    <Link href="/" className="inline-flex items-center text-blue-100 hover:text-white mb-4 transition-colors font-semibold">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Back to Chapters
-                    </Link>
                     <h1 className="text-4xl font-extrabold tracking-tight">Permutations & Combinations</h1>
                     <p className="mt-2 text-blue-100/90 text-lg">Applied Mathematics Class 11 - Chapter 5</p>
                 </div>

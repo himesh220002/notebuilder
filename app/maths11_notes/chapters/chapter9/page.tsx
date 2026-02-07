@@ -9,23 +9,15 @@ import NoteCard from "@/components/NoteCard";
 import ProblemList from "@/components/ProblemList";
 import VennProbabilityVisual from "@/components/VennProbabilityVisual";
 import BayesTreeVisual from "@/components/BayesTreeVisual";
+import ChapterNavbar from "@/components/ChapterNavbar";
 import { probabilityData, problems, examProblems } from "./data";
 
 export default function ProbabilityChapter() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-gray-800">
-            {/* Navigation Header */}
-            <nav className="bg-white shadow-md sticky top-0 z-50 border-b border-indigo-100 backdrop-blur-md bg-opacity-90">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Back to Chapters
-                    </Link>
-                    <span className="text-gray-500 text-sm font-medium">Class 11 Applied Maths</span>
-                </div>
-            </nav>
+            <ChapterNavbar currentChapter={9} totalChapters={10} />
 
-            <main className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+            <main className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
 
                 {/* Hero Section */}
                 <header className="mb-16 text-center">
