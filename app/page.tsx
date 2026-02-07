@@ -1,4 +1,4 @@
-import { Binary, TrendingUp, Layers, ListOrdered, Dices, Activity } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -178,14 +178,40 @@ export default function Home() {
                 <Activity className="w-20 h-20 text-violet-500 group-hover:scale-110 transition-transform" />
               </div>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
-                Explore the foundational concepts of Calculus: Limits, Continuity, and Derivative.
+                Understand behavior of functions near specific points. Foundation for Calculus.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-3">
                 <span className="px-4 py-2 bg-violet-100 text-violet-900 rounded-full text-sm font-bold border border-violet-300">Limits</span>
                 <span className="px-4 py-2 bg-purple-100 text-purple-900 rounded-full text-sm font-bold border border-purple-300">Continuity</span>
-                <span className="px-4 py-2 bg-fuchsia-100 text-fuchsia-900 rounded-full text-sm font-bold border border-fuchsia-300">Graphs</span>
               </div>
               <div className="mt-10 text-violet-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 8 Card */}
+          <Link href="/maths11_notes/chapters/chapter8" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-blue-100 hover:border-blue-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-blue-900 mb-2">Chapter 8</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Differentiation</h3>
+                </div>
+                <div className="bg-blue-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-blue-200 transition-colors">
+                  <TrendingUp className="w-10 h-10 text-blue-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Master the rate of change. Chain rule, implicit differentiation, and tangents.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-blue-100 text-blue-900 rounded-full text-sm font-bold border border-blue-300">Derivatives</span>
+                <span className="px-4 py-2 bg-sky-100 text-sky-900 rounded-full text-sm font-bold border border-sky-300">Chain Rule</span>
+                <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Tangents</span>
+              </div>
+              <div className="mt-10 text-blue-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>
