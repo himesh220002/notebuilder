@@ -13,7 +13,7 @@ import { formulaText, problems, examProblems } from "./data";
 export default function SequenceAndSeries() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
-            <ChapterNavbar currentChapter={4} totalChapters={10} />
+            <ChapterNavbar currentChapter={4} totalChapters={12} />
             {/* Header */}
             <header className="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 shadow-sm border-b border-emerald-200">
                 <div className="max-w-[1200px] mx-auto">

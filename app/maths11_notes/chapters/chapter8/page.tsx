@@ -13,7 +13,7 @@ import { formulaText, problems, examProblems, importantExamples } from "./data";
 export default function DifferentiationChapter() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
-            <ChapterNavbar currentChapter={8} totalChapters={10} />
+            <ChapterNavbar currentChapter={8} totalChapters={12} />
             {/* Header */}
             <header className="bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">

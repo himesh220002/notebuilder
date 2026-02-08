@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3 } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -251,21 +251,75 @@ export default function Home() {
               <div className="flex items-start justify-between mb-8">
                 <div>
                   <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 10</h2>
-                  <h3 className="text-2xl font-bold text-gray-800">Binomial Distribution</h3>
+                  <h3 className="text-2xl font-bold text-gray-800">Statistics</h3>
                 </div>
                 <div className="bg-emerald-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-emerald-200 transition-colors">
                   <BarChart3 className="w-10 h-10 text-emerald-600" />
                 </div>
               </div>
               <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
-                Understand the binomial distribution, its parameters, and its applications in real-world scenarios.
+                Analyze data variations using Variance, Standard Deviation, and Skewness measures.
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">Events</span>
-                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Conditional</span>
-                <span className="px-4 py-2 bg-green-100 text-green-900 rounded-full text-sm font-bold border border-green-300">Bayes</span>
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">Dispersion</span>
+                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Moments</span>
+                <span className="px-4 py-2 bg-green-100 text-green-900 rounded-full text-sm font-bold border border-green-300">Skewness</span>
               </div>
               <div className="mt-10 text-emerald-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 11 Card */}
+          <Link href="/maths11_notes/chapters/chapter11" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-indigo-100 hover:border-indigo-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-indigo-900 mb-2">Chapter 11</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Compound Interest & Annuity</h3>
+                </div>
+                <div className="bg-indigo-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-indigo-200 transition-colors">
+                  <Coins className="w-10 h-10 text-indigo-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Master the mathematics of finance, including CI growth, Annuity Regular/Due, and Perpetuity.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-blue-100 text-blue-900 rounded-full text-sm font-bold border border-blue-300">Compounding</span>
+                <span className="px-4 py-2 bg-teal-100 text-teal-900 rounded-full text-sm font-bold border border-teal-300">Annuities</span>
+                <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Finance</span>
+              </div>
+              <div className="mt-10 text-indigo-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 12 Card */}
+          <Link href="/maths11_notes/chapters/chapter12" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-slate-100 hover:border-slate-900">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-slate-900 mb-2">Chapter 12</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Straight Lines</h3>
+                </div>
+                <div className="bg-slate-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-slate-200 transition-colors">
+                  <Activity className="w-10 h-10 text-slate-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Explore coordinate geometry, slope properties, and various forms of straight line equations.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-slate-100 text-slate-900 rounded-full text-sm font-bold border border-slate-300">Coordinates</span>
+                <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Slopes</span>
+                <span className="px-4 py-2 bg-amber-100 text-amber-900 rounded-full text-sm font-bold border border-amber-300">Equations</span>
+              </div>
+              <div className="mt-10 text-slate-900 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>

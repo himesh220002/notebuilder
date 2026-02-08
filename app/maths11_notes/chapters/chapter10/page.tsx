@@ -8,13 +8,14 @@ import NoteCard from "@/components/NoteCard";
 import ProblemList from "@/components/ProblemList";
 import StatisticsVisual from "@/components/StatisticsVisual";
 import AdvancedStatsVisual from "@/components/AdvancedStatsVisual";
+import FormulaBlock from "@/components/FormulaBlock";
 import ChapterNavbar from "@/components/ChapterNavbar";
 import { statisticsData, problems, examProblems } from "./data";
 
 export default function StatisticsChapter() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-gray-800">
-            <ChapterNavbar currentChapter={10} totalChapters={10} />
+            <ChapterNavbar currentChapter={10} totalChapters={12} />
 
             <main className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
 
@@ -93,12 +94,8 @@ export default function StatisticsChapter() {
                             </h4>
                             <div className="space-y-4">
                                 <div className="p-3 bg-rose-50 rounded-lg">
-                                    <span className="text-xs font-bold text-rose-600 uppercase">About Mean</span>
+                                    <span className="text-xs font-bold text-rose-600 uppercase">Frequency Dist. MD</span>
                                     <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.meanDeviationMean} /></div>
-                                </div>
-                                <div className="p-3 bg-orange-50 rounded-lg">
-                                    <span className="text-xs font-bold text-orange-600 uppercase">About Median</span>
-                                    <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.meanDeviationMedian} /></div>
                                 </div>
                             </div>
                         </div>
@@ -109,16 +106,46 @@ export default function StatisticsChapter() {
                             </h4>
                             <div className="space-y-4">
                                 <div className="p-3 bg-indigo-50 rounded-lg">
-                                    <span className="text-xs font-bold text-indigo-600 uppercase">Variance</span>
-                                    <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.variance} /></div>
+                                    <span className="text-xs font-bold text-indigo-600 uppercase">Variance (Grouped)</span>
+                                    <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.varianceFreq} /></div>
                                 </div>
                                 <div className="p-3 bg-violet-50 rounded-lg">
                                     <span className="text-xs font-bold text-violet-600 uppercase">Standard Deviation (SD)</span>
-                                    <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.stdDev} /></div>
+                                    <div className="mt-1 font-bold"><MathText text={statisticsData.formulas.dispersion.stdDevFreq} /></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    {/* Shortcut Methods */}
+                    <article className="mt-12 bg-white rounded-2xl shadow-sm border border-amber-100 p-8">
+                        <h3 className="text-2xl font-bold text-amber-900 mb-6 flex items-center gap-2">
+                            <Calculator className="w-7 h-7" />
+                            Shortcut Method (Assumed Mean)
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-4">
+                                <div className="text-sm text-gray-600 leading-relaxed">
+                                    <MathText text="When calculations are cumbersome, we use an **Assumed Mean (A)**. Let $d_i = x_i - A$." />
+                                </div>
+                                <FormulaBlock
+                                    title="Shortcut Mean"
+                                    formula={statisticsData.formulas.mean.shortcut}
+                                    block
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <FormulaBlock
+                                    title="Shortcut Variance"
+                                    formula={statisticsData.formulas.dispersion.shortcutVariance}
+                                    block
+                                />
+                                <div className="p-3 bg-amber-50 rounded-xl border border-amber-100 text-[11px] text-amber-800 italic">
+                                    <MathText text="This method is essential for larger datasets where $(x_i - \bar{x})^2$ becomes too large to compute manually." />
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </section>
 
                 {/* 3. Shape of Data: Moments, Skewness, Kurtosis */}
@@ -151,14 +178,18 @@ export default function StatisticsChapter() {
                             <h4 className="font-bold text-rose-900 mb-4 flex items-center gap-2">
                                 <Target className="w-4 h-4" /> Skewness ($S_k$)
                             </h4>
-                            <div className="space-y-2">
+                            <div className="space-y-3">
                                 <div className="p-2 bg-rose-50 rounded text-[11px]">
                                     <span className="font-bold text-rose-700">Karl Pearson</span>
                                     <div className="mt-1 text-lg font-bold"><MathText text={statisticsData.formulas.skewness.karlPearson} /></div>
                                 </div>
-                                <div className="p-2 bg-orange-50 rounded text-[11px]">
-                                    <span className="font-bold text-orange-700">Bowley's</span>
-                                    <div className="mt-1 text-lg font-bold"><MathText text={statisticsData.formulas.skewness.bowley} /></div>
+                                <div className="p-3 bg-rose-900 text-white rounded-xl">
+                                    <span className="text-[10px] uppercase font-bold text-rose-300 block mb-1">Moment Coefficient ($\gamma_1$)</span>
+                                    <div className="font-mono text-sm"><MathText text={statisticsData.formulas.skewness.momentCoefficient} /></div>
+                                </div>
+                                <div className="p-2 border-t border-rose-100">
+                                    <span className="text-[10px] font-bold text-rose-400 block mb-1">MEASURE ($\beta_1$):</span>
+                                    <MathText text={statisticsData.formulas.skewness.beta1} />
                                 </div>
                             </div>
                         </div>
@@ -226,15 +257,31 @@ export default function StatisticsChapter() {
 
                     <div className="bg-white p-6 rounded-2xl border border-indigo-100 shadow-sm flex flex-col md:flex-row gap-8 items-center">
                         <div className="flex-1">
-                            <h4 className="font-bold text-gray-800 mb-2">Spearman Rank Correlation</h4>
-                            <p className="text-sm text-gray-600 mb-4">Used when data is qualitative (ranks) or has significant outliers.</p>
-                            <div className="text-xl font-bold py-3 px-4 bg-slate-50 rounded-xl inline-block border border-slate-100">
-                                <MathText text={statisticsData.formulas.correlation.spearman} />
+                            <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <Calculator className="w-5 h-5 text-indigo-600" />
+                                Covariance Calculation
+                            </h4>
+                            <div className="space-y-4">
+                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Expanded Form</span>
+                                    <MathText text={statisticsData.formulas.correlation.covarianceExpanded} />
+                                </div>
+                                <div className="text-sm text-gray-600 leading-relaxed italic">
+                                    <MathText text="This form shows that $Cov(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$." />
+                                </div>
                             </div>
                         </div>
-                        <div className="bg-amber-50 p-4 rounded-2xl border border-amber-100 text-xs text-amber-800 max-w-xs leading-relaxed">
-                            <span className="font-bold block mb-1">PRO-TIP:</span>
-                            <MathText text="If ranks are equal/tied, we use a correction factor: $\frac{m(m^2-1)}{12}$ for each tie." />
+                        <div className="bg-amber-50 p-6 rounded-2xl border border-amber-100 text-xs text-amber-800 max-sm:w-full max-w-sm leading-relaxed shadow-inner">
+                            <div className="flex items-center gap-2 mb-3">
+                                <Lightbulb className="w-5 h-5 text-amber-600" />
+                                <span className="font-bold uppercase tracking-wider">Formula Clarity</span>
+                            </div>
+                            <div className="mb-3">
+                                <MathText text="In textbooks, you might see: $\frac{1}{n}\sum xy - \bar{x}\bar{y}$" />
+                            </div>
+                            <div className="text-sm text-gray-700 leading-relaxed">
+                                <MathText text="This is algebraically derived by expanding $\sum (x_i-\bar{x})(y_i-\bar{y})$ and is the standard way to calculate correlation manually." />
+                            </div>
                         </div>
                     </div>
                 </section>

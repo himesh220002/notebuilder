@@ -17,10 +17,11 @@ export const statisticsData = {
             shortcut: "$\\bar{x} = A + \\frac{\\sum f_i d_i}{\\sum f_i} \\text{ where } d_i = x_i - A$"
         },
         dispersion: {
-            meanDeviationMean: "$MD(\\bar{x}) = \\frac{\\sum |x_i - \\bar{x}|}{n}$",
-            meanDeviationMedian: "$MD(M) = \\frac{\\sum |x_i - M|}{n}$",
-            variance: "$\\sigma^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n}$",
-            stdDev: "$\\sigma = \\sqrt{\\frac{\\sum x_i^2}{n} - (\\bar{x})^2}$"
+            meanDeviationMean: "$MD(\\bar{x}) = \\frac{\\sum f_i |x_i - \\bar{x}|}{N}$",
+            varianceFreq: "$\\sigma^2 = \\frac{\\sum f_i(x_i - \\bar{x})^2}{N}$",
+            stdDevFreq: "$\\sigma = \\sqrt{\\frac{\\sum f_i(x_i - \\bar{x})^2}{N}}$",
+            shortcutVariance: "$\\sigma^2 = \\frac{\\sum f_i d_i^2}{N} - \\left(\\frac{\\sum f_i d_i}{N}\\right)^2 \\text{ where } d_i = x_i - A$",
+            stdDevShortcut: "$\\sigma = \\sqrt{\\frac{\\sum f_i d_i^2}{N} - \\left(\\frac{\\sum f_i d_i}{N}\\right)^2}$"
         },
         moments: {
             raw: "$\\mu'_r = \\frac{\\sum (x_i - A)^r}{n} \\text{ (about point A)}$",
@@ -32,8 +33,9 @@ export const statisticsData = {
         },
         skewness: {
             karlPearson: "$S_k = \\frac{\\text{Mean} - \\text{Mode}}{\\sigma} \\approx \\frac{3(\\text{Mean} - \\text{Median})}{\\sigma}$",
-            bowley: "$S_Q = \\frac{Q_3 + Q_1 - 2M}{Q_3 - Q_1} \\text{ (using Quartiles)}$",
-            kelly: "$S_K = \\frac{D_9 + D_1 - 2M}{D_9 - D_1} \\text{ (using Deciles)}$"
+            momentCoefficient: "$\\gamma_1 = \\sqrt{\\beta_1} = \\frac{\\mu_3}{\\sigma^3} = \\frac{\\mu_3}{(\\mu_2)^{3/2}}$",
+            beta1: "$\\beta_1 = \\frac{\\mu_3^2}{\\mu_2^3} \\text{ (Measure of Skewness)}$",
+            bowley: "$S_Q = \\frac{Q_3 + Q_1 - 2M}{Q_3 - Q_1} \\text{ (using Quartiles)}$"
         },
         kurtosis: {
             beta2: "$\\beta_2 = \\frac{\\mu_4}{\\mu_2^2}$",
@@ -48,9 +50,9 @@ export const statisticsData = {
             cv: "$\\text{Coefficient of Variation (C.V.)} = \\frac{\\sigma}{\\bar{x}} \\times 100$"
         },
         correlation: {
-            covariance: "$Cov(X,Y) = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{n}$",
+            covariance: "$Cov(X,Y) = \\frac{1}{n} \\sum (x_i - \\bar{x})(y_i - \\bar{y})$",
+            covarianceExpanded: "$Cov(X,Y) = \\frac{1}{n} \\left( \\sum xy - \\frac{1}{n} \\sum x \\sum y \\right)$",
             karlPearson: "$r = \\frac{Cov(X,Y)}{\\sigma_x \\sigma_y} = \\frac{n\\sum xy - (\\sum x)(\\sum y)}{\\sqrt{[n\\sum x^2 - (\\sum x)^2][n\\sum y^2 - (\\sum y)^2]}}$",
-            spearman: "$R = 1 - \\frac{6 \\sum d_i^2}{n(n^2 - 1)} \\text{ where } d_i = \\text{Difference in Ranks}$",
             rRange: "$-1 \\le r \\le 1$"
         }
     },
