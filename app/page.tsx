@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -320,6 +320,33 @@ export default function Home() {
                 <span className="px-4 py-2 bg-amber-100 text-amber-900 rounded-full text-sm font-bold border border-amber-300">Equations</span>
               </div>
               <div className="mt-10 text-slate-900 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 13 Card */}
+          <Link href="/maths11_notes/chapters/chapter13" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-sky-100 hover:border-sky-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-sky-900 mb-2">Chapter 13</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Circles & Parabola</h3>
+                </div>
+                <div className="bg-sky-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-sky-200 transition-colors">
+                  <Shapes className="w-10 h-10 text-sky-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Explore the geometry of circles and parabolas, including standard forms, general equations, and focal properties.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-sky-100 text-sky-900 rounded-full text-sm font-bold border border-sky-300">Circles</span>
+                <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Parabola</span>
+                <span className="px-4 py-2 bg-violet-100 text-violet-900 rounded-full text-sm font-bold border border-violet-300">Conics</span>
+              </div>
+              <div className="mt-10 text-sky-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>

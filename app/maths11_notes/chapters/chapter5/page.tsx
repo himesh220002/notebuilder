@@ -13,7 +13,7 @@ import { formulaText, problems, examProblems, classicProblems } from "./data";
 export default function PermutationsAndCombinations() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
-            <ChapterNavbar currentChapter={5} totalChapters={12} />
+            <ChapterNavbar currentChapter={5} totalChapters={13} />
             {/* Header */}
             <header className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">
