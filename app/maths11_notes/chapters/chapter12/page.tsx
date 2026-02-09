@@ -12,7 +12,8 @@ import {
     Binary,
     Activity,
     Target,
-    Zap
+    Zap,
+    Ruler
 } from "lucide-react";
 import MathText from "@/components/MathText";
 import FormulaBlock from "@/components/FormulaBlock";
@@ -27,7 +28,7 @@ import { straightLineData, problems, examProblems } from "./data";
 export default function StraightLineChapter() {
     return (
         <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900">
-            <ChapterNavbar currentChapter={12} totalChapters={13} />
+            <ChapterNavbar currentChapter={12} totalChapters={15} />
 
             <main className="max-w-[1300px] mx-auto px-6 py-16">
                 {/* Modern Hero Section */}
@@ -227,7 +228,47 @@ export default function StraightLineChapter() {
                     </div>
                 </section>
 
-                {/* 4. Problems & Labs */}
+                {/* 4. Distances & Proximity */}
+                <section className="mb-28">
+                    <div className="flex items-center gap-6 mb-16 relative">
+                        <div className="w-20 h-20 bg-emerald-600 text-white rounded-3xl flex items-center justify-center text-3xl font-black shadow-2xl rotate-3">4</div>
+                        <h2 className="text-5xl font-black text-slate-900 tracking-tighter italic">Distances & Proximity</h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center">
+                                    <Target className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-2xl font-black text-slate-900">Point to Line</h3>
+                            </div>
+                            <p className="text-slate-500 text-sm mb-8 leading-relaxed font-medium">
+                                The perpendicular distance $d$ from a point $P(x_1, y_1)$ to the line $Ax + By + C = 0$.
+                            </p>
+                            <div className="bg-slate-900 p-8 rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl">
+                                <MathText text={straightLineData.distances.pointToLine} />
+                            </div>
+                        </div>
+
+                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-blue-200 transition-all group">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
+                                    <Ruler className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-2xl font-black text-slate-900">Parallel Lines</h3>
+                            </div>
+                            <p className="text-slate-500 text-sm mb-8 leading-relaxed font-medium">
+                                The distance $d$ between two parallel lines $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$.
+                            </p>
+                            <div className="bg-indigo-900 p-8 rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl">
+                                <MathText text={straightLineData.distances.parallelLines} />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 5. Problems & Labs */}
                 <section className="mb-28">
                     <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-16">
                         <div>

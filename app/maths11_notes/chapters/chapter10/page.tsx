@@ -15,7 +15,7 @@ import { statisticsData, problems, examProblems } from "./data";
 export default function StatisticsChapter() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans text-gray-800">
-            <ChapterNavbar currentChapter={10} totalChapters={13} />
+            <ChapterNavbar currentChapter={10} totalChapters={15} />
 
             <main className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
 

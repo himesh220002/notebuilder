@@ -84,6 +84,18 @@ export const problems = [
         question: "Reduction to Normal Form: Reduce x - √3y + 8 = 0 into normal form.",
         solution: "1. $x - \\sqrt{3}y = -8 \\implies -x + \\sqrt{3}y = 8$\n2. Divide by $\\sqrt{(-1)^2 + (\\sqrt{3})^2} = 2$\n3. $-\\frac{1}{2}x + \\frac{\\sqrt{3}}{2}y = 4$\n4. $\\cos(120^\\circ)x + \\sin(120^\\circ)y = 4$",
         difficulty: "hard" as const
+    },
+    {
+        id: "str_7",
+        question: "Find the distance of the point (3, -5) from the line 3x - 4y - 26 = 0.",
+        solution: "1. Point $(x_1, y_1) = (3, -5)$, Line $3x - 4y - 26 = 0$\n2. $d = \\frac{|3(3) - 4(-5) - 26|}{\\sqrt{3^2 + (-4)^2}} = \\frac{|9 + 20 - 26|}{\\sqrt{9 + 16}}$\n3. $d = \\frac{|3|}{5} = 0.6$ units",
+        difficulty: "medium" as const
+    },
+    {
+        id: "str_8",
+        question: "Find the distance between the parallel lines $15x + 8y - 34 = 0$ and $15x + 8y + 31 = 0$.",
+        solution: "1. $A = 15, B = 8, C_1 = -34, C_2 = 31$\n2. $d = \\frac{|-34 - 31|}{\\sqrt{15^2 + 8^2}} = \\frac{|-65|}{\\sqrt{225 + 64}}$\n3. $d = \\frac{65}{\\sqrt{289}} = \\frac{65}{17}$ units",
+        difficulty: "medium" as const
     }
 ];
 

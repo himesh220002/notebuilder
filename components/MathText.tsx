@@ -63,6 +63,7 @@ export default function MathText({ text, className = '', block = false }: MathTe
         'π': '\\pi',
         '∞': '\\infty',
         '√': '\\sqrt',
+        '₹': '\\text{₹}',
     };
 
     // Helper to process a raw math string into valid LaTeX

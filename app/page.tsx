@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -347,6 +347,60 @@ export default function Home() {
                 <span className="px-4 py-2 bg-violet-100 text-violet-900 rounded-full text-sm font-bold border border-violet-300">Conics</span>
               </div>
               <div className="mt-10 text-sky-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 14 Card */}
+          <Link href="/maths11_notes/chapters/chapter14" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-emerald-100 hover:border-emerald-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 14</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Taxation</h3>
+                </div>
+                <div className="bg-emerald-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-emerald-200 transition-colors">
+                  <Calculator className="w-10 h-10 text-emerald-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Understand GST mechanics, supply chains, and income tax calculation including slabs and legal deductions.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-emerald-100 text-emerald-900 rounded-full text-sm font-bold border border-emerald-300">GST</span>
+                <span className="px-4 py-2 bg-indigo-100 text-indigo-900 rounded-full text-sm font-bold border border-indigo-300">Income Tax</span>
+                <span className="px-4 py-2 bg-amber-100 text-amber-900 rounded-full text-sm font-bold border border-amber-300">Legal</span>
+              </div>
+              <div className="mt-10 text-emerald-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 15 Card */}
+          <Link href="/maths11_notes/chapters/chapter15" className="group">
+            <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-10 cursor-pointer h-full hover:scale-105 transform border-2 border-amber-100 hover:border-amber-500">
+              <div className="flex items-start justify-between mb-8">
+                <div>
+                  <h2 className="text-5xl font-black text-amber-900 mb-2">Chapter 15</h2>
+                  <h3 className="text-2xl font-bold text-gray-800">Utility Bills</h3>
+                </div>
+                <div className="bg-amber-100 p-4 rounded-xl mb-6 inline-block group-hover:bg-amber-200 transition-colors">
+                  <Zap className="w-10 h-10 text-amber-600" />
+                </div>
+              </div>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed font-semibold">
+                Learn the mathematics of electricity tariffs, water consumption units, and PNG gas billing concepts.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-amber-100 text-amber-900 rounded-full text-sm font-bold border border-amber-300">Electricity</span>
+                <span className="px-4 py-2 bg-sky-100 text-sky-900 rounded-full text-sm font-bold border border-sky-300">Water</span>
+                <span className="px-4 py-2 bg-orange-100 text-orange-900 rounded-full text-sm font-bold border border-orange-300">PNG Gas</span>
+              </div>
+              <div className="mt-10 text-amber-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>

@@ -29,7 +29,7 @@ import { conicsData, problems, examProblems } from "./data";
 export default function CirclesParabolaChapter() {
     return (
         <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900">
-            <ChapterNavbar currentChapter={13} totalChapters={13} />
+            <ChapterNavbar currentChapter={13} totalChapters={15} />
 
             <main className="max-w-[1300px] mx-auto px-6 py-16">
                 {/* Modern Hero Section */}

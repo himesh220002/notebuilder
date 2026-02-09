@@ -14,7 +14,7 @@ import { formulaText, setLaws, functionTypes, problems, compositeExamples, examP
 export default function Chapter3() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-            <ChapterNavbar currentChapter={3} totalChapters={13} />
+            <ChapterNavbar currentChapter={3} totalChapters={15} />
             <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-16 py-16">
 
                 <header className="mb-16 pb-8 border-b-4 border-indigo-200 text-center">
