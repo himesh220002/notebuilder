@@ -79,7 +79,7 @@ export default function Chapter3() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
                         <div className="space-y-6">
                             <article className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
-                                <h4 className="text-2xl font-bold text-blue-900 mb-4">Union ($A \cup B$)</h4>
+                                <h4 className="text-2xl font-bold text-blue-900 mb-4">Union ($A cup B$)</h4>
                                 <MathText text={formulaText.unionDef} />
                                 <div className="mt-4 flex justify-center">
                                     <VennDiagram mode="union" />
@@ -96,7 +96,7 @@ export default function Chapter3() {
 
                         <div className="space-y-6">
                             <article className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-purple-500">
-                                <h4 className="text-2xl font-bold text-purple-900 mb-4">Intersection ($A \cap B$)</h4>
+                                <h4 className="text-2xl font-bold text-purple-900 mb-4">Intersection ($A cap B$)</h4>
                                 <MathText text={formulaText.intersectionDef} />
                                 <div className="mt-4 flex justify-center">
                                     <VennDiagram mode="intersection" />
@@ -122,12 +122,12 @@ export default function Chapter3() {
                             <div className="flex flex-col items-center">
                                 <h5 className="font-bold text-lg mb-2 text-teal-800">Union of 3 Sets</h5>
                                 <VennDiagram mode="union3" />
-                                <p className="mt-2 text-sm text-gray-500">$A \cup B \cup C$</p>
+                                <p className="mt-2 text-sm text-gray-500">$A cup B cup C$</p>
                             </div>
                             <div className="flex flex-col items-center">
                                 <h5 className="font-bold text-lg mb-2 text-teal-800">Intersection of 3 Sets</h5>
                                 <VennDiagram mode="intersection3" />
-                                <p className="mt-2 text-sm text-gray-500">$A \cap B \cap C$</p>
+                                <p className="mt-2 text-sm text-gray-500">$A cap B cap C$</p>
                             </div>
                         </div>
                     </article>
@@ -224,7 +224,7 @@ export default function Chapter3() {
 
                     {/* Composite Functions Section */}
                     <article className="bg-white rounded-xl shadow-md p-8 border-l-4 border-rose-500">
-                        <h3 className="text-3xl font-bold text-rose-900 mb-6">Composite Functions ($g \circ f$)</h3>
+                        <h3 className="text-3xl font-bold text-rose-900 mb-6">Composite Functions ($g circ f$)</h3>
                         <div className="mb-8">
                             <NoteCard title="Definition" content={formulaText.compositeDef} type="tip" />
                             <div className="mt-4 p-4 bg-rose-50 rounded border border-rose-100">
@@ -243,7 +243,7 @@ export default function Chapter3() {
                                     <div key={idx} className="bg-gray-50 p-4 rounded border border-gray-200 shadow-sm">
                                         <div className="mb-2 text-sm text-gray-500">Example {idx + 1}</div>
                                         <div className="font-mono text-sm text-blue-800 mb-2"><MathText text={ex.f} /> , <MathText text={ex.g} /></div>
-                                        <div className="font-bold text-gray-800 mb-2">Find $g \circ f$:</div>
+                                        <div className="font-bold text-gray-800 mb-2">Find $g circ f$:</div>
                                         <div className="bg-white p-2 rounded border border-gray-200">
                                             <MathText text={ex.calc} />
                                         </div>

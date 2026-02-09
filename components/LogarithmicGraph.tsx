@@ -1,5 +1,6 @@
 'use client';
 
+import MathText from './MathText';
 import {
   LineChart,
   Line,
@@ -34,12 +35,12 @@ export default function LogarithmicGraph() {
   return (
     <div className="w-full bg-white rounded-xl shadow-lg p-6 border border-green-200 mt-8">
       <h3 className="text-2xl font-bold text-green-900 mb-4">
-        📈 Logarithmic Functions: $\log_2(x)$, $\log_3(x)$, $\log_{10}(x)$
+        📈 <MathText text="Logarithmic Functions: $log_2(x), log_3(x), log_{10}(x)$" />
       </h3>
       <p className="text-gray-700 mb-6">
         Logarithmic functions are the <strong>inverse</strong> of exponential functions. They grow slowly and are useful for measuring scales that span many orders of magnitude.
       </p>
-      
+
       <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
@@ -67,7 +68,7 @@ export default function LogarithmicGraph() {
           />
           <ReferenceLine x={1} stroke="#999" strokeDasharray="5 5" label="x=1" />
           <ReferenceLine y={0} stroke="#999" strokeDasharray="5 5" />
-          
+
           <Line
             type="monotone"
             dataKey="log2"
@@ -101,10 +102,10 @@ export default function LogarithmicGraph() {
       <div className="mt-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
         <h4 className="font-bold text-lg text-green-900 mb-2">📌 Key Observations:</h4>
         <ul className="space-y-2 text-gray-700">
-          <li>✓ All curves pass through the point (1, 0) because $\log_a(1) = 0$</li>
+          <li>✓ All curves pass through the point (1, 0) because <MathText text="$log_a(1) = 0$" /></li>
           <li>✓ Logarithmic functions grow very slowly compared to exponentials</li>
-          <li>✓ Smaller base = steeper curve (compare $\log_2$ and $\log_{10}$)</li>
-          <li>✓ Undefined for x ≤ 0 (logarithms only exist for positive values)</li>
+          <li>✓ Smaller base = steeper curve (compare <MathText text="$log_2$ and $log_{10}$" />)</li>
+          <li>✓ Undefined for <MathText text="$x <= 0$" /> (logarithms only exist for positive values)</li>
           <li>✓ These are <strong>inverse functions</strong> of exponentials</li>
         </ul>
       </div>

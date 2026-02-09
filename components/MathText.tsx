@@ -47,6 +47,30 @@ export default function MathText({ text, className = '', block = false }: MathTe
         'text': '\\text',
         'together': '\\text{together}',
         'of': '\\text{ of }',
+        // Sets
+        'cup': '\\cup',
+        'cap': '\\cap',
+        'in': '\\in',
+        'notin': '\\notin',
+        'subseteq': '\\subseteq',
+        'phi': '\\phi',
+        'U': '\\mathbb{U}',
+        'mathR': '\\mathbb{R}',
+        'mathN': '\\mathbb{N}',
+        'mathZ': '\\mathbb{Z}',
+        // Trig & Logs
+        'sin': '\\sin',
+        'cos': '\\cos',
+        'tan': '\\tan',
+        'log': '\\log',
+        'ln': '\\ln',
+        'antilog': '\\text{antilog}',
+        // Others
+        'circ': '\\circ',
+        'cdot': '\\cdot',
+        'bar': '\\bar',
+        'Leftrightarrow': '\\Leftrightarrow',
+        'iff': '\\iff',
     };
 
     // Map for symbol conversions
@@ -68,6 +92,9 @@ export default function MathText({ text, className = '', block = false }: MathTe
         '∞': '\\infty',
         '√': '\\sqrt',
         '₹': '\\text{₹}',
+        '<=>': '\\Leftrightarrow',
+        '<=> ': '\\Leftrightarrow ',
+        '| ': ' \\mid ',
     };
 
     // Helper to process a raw math string into valid LaTeX

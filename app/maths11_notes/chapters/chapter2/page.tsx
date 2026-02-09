@@ -174,7 +174,7 @@ export default function Chapter2() {
                 <h4 className="font-bold text-lg text-pink-900 mb-4">Type 1: Simplification</h4>
                 <p className="text-gray-700 mb-3">Reduce complex expressions using the index rules.</p>
                 <p className="text-gray-700 font-mono bg-white p-3 rounded text-sm">
-                  Example: <MathText text="$[(2^3)^2 \\times 2^{-1}] \\div 2^4 = 2$" />
+                  Example: <MathText text="$[(2^3)^2 times 2^{-1}] div 2^4 = 2$" />
                 </p>
               </div>
 
@@ -182,15 +182,15 @@ export default function Chapter2() {
                 <h4 className="font-bold text-lg text-blue-900 mb-4">Type 2: Variable Solving</h4>
                 <p className="text-gray-700 mb-3">Find the value of the unknown exponent.</p>
                 <p className="text-gray-700 font-mono bg-white p-3 rounded text-sm">
-                  Example: <MathText text="$3^x = 81 \\Rightarrow 3^x = 3^4 \\Rightarrow x = 4$" />
+                  Example: <MathText text="$3^x = 81 Rightarrow 3^x = 3^4 Rightarrow x = 4$" />
                 </p>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h4 className="font-bold text-lg text-green-900 mb-4">Type 3: Combined Operations</h4>
-                <p className="text-gray-700 mb-3">Mix <MathText text="$\times$, $\div$" />, roots, and fractional exponents.</p>
+                <p className="text-gray-700 mb-3">Mix <MathText text="$times, div, sqrt$" />, roots, and fractional exponents.</p>
                 <p className="text-gray-700 font-mono bg-white p-3 rounded text-sm">
-                  Example: <MathText text="$\\sqrt[3]{8} \\times \\sqrt{16} = 2 \\times 4 = 8$" />
+                  Example: <MathText text="$sqrt[3]{8} times sqrt{16} = 2 times 4 = 8$" />
                 </p>
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function Chapter2() {
             <p className="text-gray-700 text-lg mb-4">Logarithms are the <strong>inverse</strong> of exponentials:</p>
             <ul className="space-y-3 text-gray-700 text-lg">
               <li>✓ <MathText text={formulaText.inverse} /></li>
-              <li>✓ They "undo" each other: <MathText text="$a^{\\log_a(x)} = x$" /> and <MathText text="$\\log_a(a^x) = x$" /></li>
+              <li>✓ They "undo" each other: <MathText text="$a^{log_a(x)} = x$ and $log_a(a^x) = x$" /></li>
               <li>✓ Exponentials grow/decay rapidly; logarithms grow slowly</li>
             </ul>
           </div>
@@ -271,9 +271,9 @@ export default function Chapter2() {
                 <div className="bg-white p-4 rounded border border-green-200">
                   <strong>Note:</strong> <MathText text="Mantissa is always positive." />
                   <br />
-                  If <MathText text="$\log x = -1.25$" />, we write it as:
+                  If <MathText text="$log x = -1.25$" />, we write it as:
                   <br />
-                  <MathText text="$-1 - 0.25 = -1 - 1 + 1 - 0.25 = -2 + 0.75 = \bar{2}.75$" />
+                  <MathText text="$-1 - 0.25 = -1 - 1 + 1 - 0.25 = -2 + 0.75 = bar 2.75$" />
                 </div>
               </div>
             </div>

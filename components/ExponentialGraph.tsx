@@ -1,5 +1,6 @@
 'use client';
 
+import MathText from './MathText';
 import {
   LineChart,
   Line,
@@ -34,12 +35,12 @@ export default function ExponentialGraph() {
   return (
     <div className="w-full bg-white rounded-xl shadow-lg p-6 border border-blue-200">
       <h3 className="text-2xl font-bold text-blue-900 mb-4">
-        📊 Exponential Functions: $2^x$, $3^x$, $(0.5)^x$
+        📊 <MathText text="Exponential Functions: $2^x, 3^x, (0.5)^x$" />
       </h3>
       <p className="text-gray-700 mb-6">
         Exponential functions grow or decay at constant rates. As the exponent increases, the value grows exponentially.
       </p>
-      
+
       <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
@@ -68,7 +69,7 @@ export default function ExponentialGraph() {
           />
           <ReferenceLine x={0} stroke="#999" strokeDasharray="5 5" />
           <ReferenceLine y={1} stroke="#999" strokeDasharray="5 5" />
-          
+
           <Line
             type="monotone"
             dataKey="exp2"
@@ -102,10 +103,10 @@ export default function ExponentialGraph() {
       <div className="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
         <h4 className="font-bold text-lg text-blue-900 mb-2">📌 Key Observations:</h4>
         <ul className="space-y-2 text-gray-700">
-          <li>✓ All curves pass through the point (0, 1) because $a^0 = 1$</li>
+          <li>✓ All curves pass through the point (0, 1) because <MathText text="$a^0 = 1$" /></li>
           <li>✓ When base {'>'} 1: exponential growth (curves rise)</li>
           <li>✓ When 0 {'<'} base {'<'} 1: exponential decay (curves fall)</li>
-          <li>✓ Larger bases grow faster (compare $2^x$ and $3^x$)</li>
+          <li>✓ Larger bases grow faster (compare <MathText text="$2^x$ and $3^x$" />)</li>
         </ul>
       </div>
     </div>
