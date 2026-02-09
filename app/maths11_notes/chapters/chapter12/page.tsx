@@ -28,7 +28,7 @@ import { straightLineData, problems, examProblems } from "./data";
 export default function StraightLineChapter() {
     return (
         <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900">
-            <ChapterNavbar currentChapter={12} totalChapters={15} />
+            <ChapterNavbar currentChapter={12} totalChapters={17} />
 
             <main className="max-w-[1300px] mx-auto px-6 py-16">
                 {/* Modern Hero Section */}

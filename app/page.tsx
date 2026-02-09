@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes, Zap, Target } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -401,6 +401,68 @@ export default function Home() {
                 <span className="px-4 py-2 bg-orange-100 text-orange-900 rounded-full text-sm font-bold border border-orange-300">PNG Gas</span>
               </div>
               <div className="mt-10 text-amber-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 16 */}
+          <Link href="/maths11_notes/chapters/chapter16" className="group">
+            <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-10 border-t-8 border-indigo-500 h-full flex flex-col hover:-translate-y-2 transform relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+                <Target className="w-24 h-24 text-indigo-500" />
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 bg-indigo-50 rounded-2xl text-indigo-600">
+                  <Target className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black text-gray-900 tracking-tight">Chapter 16</h3>
+                  <p className="text-indigo-600 font-bold uppercase tracking-widest text-[10px]">Unit: Reasoning</p>
+                </div>
+              </div>
+              <h4 className="text-2xl font-bold text-gray-800 mb-6 leading-tight">Quantitative Aptitude</h4>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed font-semibold">
+                Master Clocks, Calendars, Time & Work, Distance, and Seating Arrangements.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-auto">
+                <span className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-bold border border-indigo-100 italic">Clocks</span>
+                <span className="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 italic">Work Logic</span>
+                <span className="px-4 py-2 bg-rose-50 text-rose-700 rounded-full text-sm font-bold border border-rose-100 italic">Calendar</span>
+              </div>
+              <div className="mt-10 text-indigo-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
+                Start Learning
+                <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Chapter 17 */}
+          <Link href="/maths11_notes/chapters/chapter17" className="group">
+            <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-10 border-t-8 border-rose-500 h-full flex flex-col hover:-translate-y-2 transform relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+                <Brain className="w-24 h-24 text-rose-500" />
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 bg-rose-50 rounded-2xl text-rose-600">
+                  <Brain className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black text-gray-900 tracking-tight">Chapter 17</h3>
+                  <p className="text-rose-600 font-bold uppercase tracking-widest text-[10px]">Unit: Reasoning</p>
+                </div>
+              </div>
+              <h4 className="text-2xl font-bold text-gray-800 mb-6 leading-tight">Logical Reasoning</h4>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed font-semibold">
+                Understand Coding-Decoding, Family Trees, and Venn Diagram-based Syllogisms.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-auto">
+                <span className="px-4 py-2 bg-rose-50 text-rose-700 rounded-full text-sm font-bold border border-rose-100 italic">Coding</span>
+                <span className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-bold border border-indigo-100 italic">Family Tree</span>
+                <span className="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 italic">Venn Logic</span>
+              </div>
+              <div className="mt-10 text-rose-600 font-bold flex items-center gap-3 text-lg group-hover:gap-4 transition-all">
                 Start Learning
                 <span className="group-hover:translate-x-2 transition-transform text-2xl">→</span>
               </div>

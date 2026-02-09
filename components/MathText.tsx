@@ -43,6 +43,10 @@ export default function MathText({ text, className = '', block = false }: MathTe
         'deg': '^\\circ',
         'degree': '^\\circ',
         'degrees': '^\\circ',
+        'frac': '\\frac',
+        'text': '\\text',
+        'together': '\\text{together}',
+        'of': '\\text{ of }',
     };
 
     // Map for symbol conversions

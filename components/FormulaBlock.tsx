@@ -16,7 +16,7 @@ export default function FormulaBlock({ formula, block, title }: FormulaBlockProp
       {title && <h5 className="font-bold text-sm mb-3 text-blue-900">{title}</h5>}
       <div className={block ? "space-y-2 text-center text-base font-mono text-gray-800 bg-white p-4 rounded border border-blue-100" : "inline font-mono text-sm text-gray-700"}>
         {block ? (
-          lines.map((line, idx) => <div key={idx} className="leading-relaxed"><MathText text={line} /></div>)
+          lines.map((line, idx) => <div key={idx} className="leading-relaxed"><MathText text={line} block={true} /></div>)
         ) : (
           <MathText text={formula} />
         )}

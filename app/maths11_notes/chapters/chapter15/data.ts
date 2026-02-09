@@ -47,13 +47,13 @@ export const problems = [
     {
         id: "util_2",
         question: "A household consumed 15 kl of water. If the rate is ₹10/kl and sewerage charge is 60% of water charge, calculate total bill including ₹20 meter rent.",
-        solution: "1. Water Charge = $15 times 10 = ₹150$\n2. Sewerage Charge = $60\% \text{ of } 150 = ₹90$\n3. Total Bill = Water + Sewerage + Rent = $150 + 90 + 20 = ₹260$",
+        solution: "1. Water Charge = $15 times 10 = ₹150$\n2. Sewerage Charge = $60\% of 150 = ₹90$\n3. Total Bill = Water + Sewerage + Rent = $150 + 90 + 20 = ₹260$",
         difficulty: "easy" as const
     },
     {
         id: "util_3",
         question: "Calculate PNG bill for 42 SCM at ₹45/SCM if fixed charge is ₹100 and VAT is 5% on total amount.",
-        solution: "1. Gas Charge = $42 times 45 = ₹1,890$\n2. Base Amount = $1,890 + 100 = ₹1,990$\n3. VAT = $5\% \text{ of } 1,990 = ₹99.50$\n4. Final Total = $1,990 + 99.50 = ₹2,089.50$",
+        solution: "1. Gas Charge = $42 times 45 = ₹1,890$\n2. Base Amount = $1,890 + 100 = ₹1,990$\n3. VAT = $5\% of 1,990 = ₹99.50$\n4. Final Total = $1,990 + 99.50 = ₹2,089.50$",
         difficulty: "medium" as const
     },
     {
@@ -71,13 +71,13 @@ export const problems = [
     {
         id: "util_6",
         question: "Water tax is levied at 10%. If water charge is ₹300, calculate total tax amount.",
-        solution: "1. Tax = $10\% \text{ of } 300 = ₹30$.",
+        solution: "1. Tax = $10\% of 300 = ₹30$.",
         difficulty: "easy" as const
     },
     {
         id: "util_7",
         question: "A factory uses 5000 units of electricity. Tariff is flat ₹7/unit with 10% energy tax. Find total.",
-        solution: "1. Energy = $5000 times 7 = ₹35,000$\n2. Tax = $10\% \text{ of } 35,000 = ₹3,500$\n3. Total = ₹38,500.",
+        solution: "1. Energy = $5000 times 7 = ₹35,000$\n2. Tax = $10\% of 35,000 = ₹3,500$\n3. Total = ₹38,500.",
         difficulty: "hard" as const
     },
     {
@@ -92,7 +92,7 @@ export const examProblems = [
     {
         id: "util_exam_1",
         question: "A residential complex consumes 1200 units. Slabs: 0-200 @ ₹3, 201-500 @ ₹4.5, 501-1000 @ ₹6, above 1000 @ ₹8. Fixed charge ₹200, Surcharge 8%. Calculate net payable.",
-        solution: "1. 0-200: $200 times 3 = 600$\n2. 201-500: $300 times 4.5 = 1350$\n3. 501-1000: $500 times 6 = 3000$\n4. 1001-1200: $200 times 8 = 1600$\n5. Energy = $600 + 1350 + 3000 + 1600 = ₹6,550$\n6. Surcharge = $8\% \text{ of } 6550 = ₹524$\n7. Total = $6550 + 200 + 524 = ₹7,274$",
+        solution: "1. 0-200: $200 times 3 = 600$\n2. 201-500: $300 times 4.5 = 1350$\n3. 501-1000: $500 times 6 = 3000$\n4. 1001-1200: $200 times 8 = 1600$\n5. Energy = $600 + 1350 + 3000 + 1600 = ₹6,550$\n6. Surcharge = $8\% of 6550 = ₹524$\n7. Total = $6550 + 200 + 524 = ₹7,274$",
         difficulty: "hard" as const,
         examTag: "CBSE 2023"
     },

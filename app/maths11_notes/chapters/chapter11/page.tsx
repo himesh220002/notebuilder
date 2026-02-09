@@ -26,7 +26,7 @@ import { financeData, problems, examProblems } from "./data";
 export default function CompoundInterestChapter() {
     return (
         <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-800">
-            <ChapterNavbar currentChapter={11} totalChapters={15} />
+            <ChapterNavbar currentChapter={11} totalChapters={17} />
 
             <main className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
                 {/* Hero Section */}

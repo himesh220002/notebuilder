@@ -15,7 +15,7 @@ import { formulaText, problems, examProblems, evaluationMethods } from "./data";
 export default function LimitsContinuityChapter() {
     return (
         <div className="min-h-screen bg-gray-50 pb-20">
-            <ChapterNavbar currentChapter={7} totalChapters={15} />
+            <ChapterNavbar currentChapter={7} totalChapters={17} />
             {/* Header */}
             <header className="bg-gradient-to-r from-violet-600 to-purple-800 text-white p-6 shadow-lg">
                 <div className="max-w-[1200px] mx-auto">
