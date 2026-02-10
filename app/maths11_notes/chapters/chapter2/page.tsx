@@ -8,6 +8,7 @@ import NoteCard from "@/components/NoteCard";
 import ProblemList from "@/components/ProblemList";
 import MathText from "@/components/MathText";
 import ChapterNavbar from "@/components/ChapterNavbar";
+import LogTableVisual from "@/components/LogTableVisual";
 import { formulaText, problems, rules, logRules, logExamples, antilogExamples } from "./data";
 
 // Helper component for rule cards to avoid dynamic classes
@@ -234,6 +235,10 @@ export default function Chapter2() {
           <h2 className="text-4xl font-bold text-gray-900 mb-12 flex items-center gap-3">
             <span className="text-4xl">📐</span>Logarithms in Depth
           </h2>
+
+          <div className="mb-12">
+            <LogTableVisual />
+          </div>
 
           <article className="mb-12 bg-white rounded-xl shadow-md p-8 border-l-4 border-indigo-600">
             <h3 className="text-3xl font-bold text-indigo-900 mb-6">1. Breakdown of a Logarithm</h3>
