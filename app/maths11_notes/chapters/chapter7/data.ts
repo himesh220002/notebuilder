@@ -46,7 +46,7 @@ export const continuityExamplesData = [
         func: "$f(x) = [x]$",
         type: "step" as const,
         domain: "$\\mathbb{R}$",
-        continuity: "Discontinuous at every integer point ($... -1, 0, 1, 2 ...$). Shows 'Jump Discontinuity'.",
+        continuity: "Discontinuous at every integer. **Critical Note:** For any non-integer $x$, $[x]$ shifts the value to the **LEFT (lower)** integer. Example: $[2.3] = 2$ and $[-1.5] = -2$. (If it shifted right, it would be the Ceiling function).",
         color: "text-blue-700",
         bgColor: "bg-blue-50",
         borderColor: "border-blue-200"

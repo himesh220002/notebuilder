@@ -14,6 +14,24 @@ export default function Home() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive study material with visual mindmaps, detailed topics, and practice problems
           </p>
+
+          <div className="mt-10 inline-flex items-center gap-4 bg-indigo-50 border border-indigo-200 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+            <div className="bg-indigo-600 p-2 rounded-lg text-white group-hover:scale-110 transition-transform">
+              <BookOpen className="w-6 h-6" />
+            </div>
+            <div className="text-left">
+              <p className="text-sm font-bold text-indigo-900 uppercase tracking-wider">New Resource</p>
+              <a
+                href="https://mycbseguide.com/blog/cbse-class-11-applied-maths-sample-papers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-600 font-bold hover:underline flex items-center gap-1"
+              >
+                Class 11 Applied Maths Sample Papers
+                <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </header>
 
         {/* Navigation Cards */}
