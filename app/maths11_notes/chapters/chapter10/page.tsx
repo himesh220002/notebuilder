@@ -291,7 +291,7 @@ export default function StatisticsChapter() {
                     <h2 className="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <span className="text-emerald-500">✏️</span> Practice Zone
                     </h2>
-                    <ProblemList problems={problems} chapterId="chapter10" />
+                    <ProblemList problems={problems} chapterId="chapter10" showTestButton={true} />
                 </section>
 
                 {/* Exam Corner */}

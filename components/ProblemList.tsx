@@ -2,6 +2,10 @@
 
 import MathText from './MathText';
 import { useState, useEffect } from 'react';
+import { Brain, Play } from 'lucide-react';
+import { testsData } from '@/data/testsData';
+import MCQTest from './MCQTest';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface Problem {
   id: string;
@@ -14,11 +18,17 @@ interface ProblemListProps {
   problems: Problem[] | string[];
   title?: string;
   chapterId: string; // Required for scoping localStorage
+  showTestButton?: boolean;
 }
 
-export default function ProblemList({ problems, title = 'Problems', chapterId }: ProblemListProps) {
+export default function ProblemList({ problems, title = 'Problems', chapterId, showTestButton }: ProblemListProps) {
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [mounted, setMounted] = useState(false);
+  const [showChapterTest, setShowChapterTest] = useState(false);
+
+  // Parse chapterId (e.g., 'chapter1' -> 1)
+  const numericChapterId = parseInt(chapterId.replace('chapter', ''));
+  const currentChapterTest = testsData.find(t => t.chapterId === numericChapterId);
 
   // Load progress from localStorage on mount
   useEffect(() => {
@@ -42,14 +52,52 @@ export default function ProblemList({ problems, title = 'Problems', chapterId }:
 
   return (
     <div className="my-8 w-full">
-      <div className="flex items-center justify-between mb-6">
-        <h4 className="text-2xl font-bold text-gray-900">{title}</h4>
-        {mounted && (
-          <span className="text-sm font-semibold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-            {Object.values(completed).filter(Boolean).length} / {problems.length} Completed
-          </span>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+        <div className="flex items-center gap-4">
+          <div className="bg-green-100 p-3 rounded-xl text-green-600">
+            <Brain className="w-8 h-8" />
+          </div>
+          <div>
+            <h4 className="text-3xl font-black text-gray-900">{title}</h4>
+            {mounted && (
+              <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">
+                {Object.values(completed).filter(Boolean).length} / {problems.length} Solutions Mastered
+              </p>
+            )}
+          </div>
+        </div>
+
+        {showTestButton && currentChapterTest && (
+          <button
+            onClick={() => setShowChapterTest(true)}
+            className="flex items-center gap-3 px-8 py-4 bg-indigo-600 text-white font-black rounded-xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all group overflow-hidden relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <Play className="w-5 h-5 fill-current" />
+            <span>Take Chapter {numericChapterId} MCQ Test</span>
+          </button>
         )}
       </div>
+
+      <AnimatePresence>
+        {showChapterTest && currentChapterTest && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-slate-900/80 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              className="bg-slate-50 w-full max-w-4xl max-h-[90vh] rounded-[2.5rem] shadow-2xl flex flex-col overflow-y-auto p-8 md:p-12 border-2 border-white/20 custom-scrollbar"
+            >
+              <MCQTest test={currentChapterTest} onClose={() => setShowChapterTest(false)} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="space-y-5">
         {problems.map((problem, idx) => {

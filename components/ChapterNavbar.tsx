@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronLeft, ChevronRight, Home, LayoutGrid, Loader2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, LayoutGrid, Loader2, Brain } from 'lucide-react';
 
 interface ChapterNavbarProps {
     currentChapter: number;
@@ -40,8 +40,8 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
                                 href={`/maths11_notes/chapters/chapter${prevChapter}`}
                                 onClick={() => handleNavClick('prev')}
                                 className={`flex items-center gap-2 font-bold transition-all ${isNavigating && navDirection === 'prev'
-                                        ? 'text-gray-400 cursor-not-allowed'
-                                        : 'text-indigo-600 hover:text-indigo-800 hover:-translate-x-1'
+                                    ? 'text-gray-400 cursor-not-allowed'
+                                    : 'text-indigo-600 hover:text-indigo-800 hover:-translate-x-1'
                                     }`}
                             >
                                 {isNavigating && navDirection === 'prev' ? (
@@ -63,8 +63,8 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
                             href="/"
                             onClick={() => handleNavClick('home')}
                             className={`p-2 rounded-xl transition-all ${isNavigating && navDirection === 'home'
-                                    ? 'text-indigo-400'
-                                    : 'text-slate-400 hover:text-indigo-600 hover:bg-indigo-50'
+                                ? 'text-indigo-400'
+                                : 'text-slate-400 hover:text-indigo-600 hover:bg-indigo-50'
                                 }`}
                             title="Back to Home"
                         >
@@ -75,9 +75,12 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
                             )}
                         </Link>
                         <div className="h-6 w-px bg-slate-200 hidden sm:block"></div>
-                        <span className="text-slate-500 font-bold text-sm hidden sm:block tracking-widest uppercase">
-                            Chapter {currentChapter}
-                        </span>
+                        <div className="flex flex-col items-center sm:items-start group">
+                            <span className="text-slate-500 font-bold text-sm hidden sm:block tracking-widest uppercase">
+                                Chapter {currentChapter}
+                            </span>
+                            <LastScore chapterId={currentChapter} />
+                        </div>
                     </div>
 
                     {/* Right: Next Button */}
@@ -87,8 +90,8 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
                                 href={`/maths11_notes/chapters/chapter${nextChapter}`}
                                 onClick={() => handleNavClick('next')}
                                 className={`flex items-center gap-2 font-bold transition-all ${isNavigating && navDirection === 'next'
-                                        ? 'text-gray-400 cursor-not-allowed'
-                                        : 'text-indigo-600 hover:text-indigo-800 hover:translate-x-1'
+                                    ? 'text-gray-400 cursor-not-allowed'
+                                    : 'text-indigo-600 hover:text-indigo-800 hover:translate-x-1'
                                     }`}
                             >
                                 <span className="hidden sm:inline">Next Chapter</span>
@@ -106,6 +109,34 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
                 </div>
             </div>
         </nav>
+    );
+};
+
+interface LastScoreProps {
+    chapterId: number;
+}
+
+const LastScore: React.FC<LastScoreProps> = ({ chapterId }) => {
+    const [lastScore, setLastScore] = useState<{ score: number, total: number } | null>(null);
+
+    useEffect(() => {
+        const saved = localStorage.getItem(`mcq_score_ch_${chapterId}`);
+        if (saved) {
+            try {
+                setLastScore(JSON.parse(saved));
+            } catch (e) {
+                console.error("Failed to parse score", e);
+            }
+        }
+    }, [chapterId]);
+
+    if (!lastScore) return null;
+
+    return (
+        <div className="flex items-center gap-1.5 text-[10px] font-black text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-0.5 border border-emerald-100 animate-in fade-in slide-in-from-top-1 duration-500">
+            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+            LAST SCORE: {lastScore.score}/{lastScore.total}
+        </div>
     );
 };
 

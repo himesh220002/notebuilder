@@ -181,7 +181,7 @@ export default function CirclesParabolaChapter() {
                         </div>
                     </div>
 
-                    <ProblemList problems={problems} chapterId="chapter13" title="Concept Master" />
+                    <ProblemList problems={problems} chapterId="chapter13" title="Concept Master" showTestButton={true} />
 
                     <div className="mt-24 space-y-12">
                         <header className="text-center">

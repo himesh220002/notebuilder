@@ -238,7 +238,7 @@ export default function FunctionsChapter() {
 
                     <div className="mt-12">
                         <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-emerald-200 pb-2">🔥 CBSE Exam Priority Questions</h3>
-                        <ProblemList problems={examProblems} title="Important Questions (Applied Maths)" chapterId="chapter6_exam" />
+                        <ProblemList problems={examProblems} title="Important Questions (Applied Maths)" chapterId="chapter6_exam" showTestButton={true} />
                     </div>
                 </section>
 

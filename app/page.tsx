@@ -1,9 +1,20 @@
-import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes, Zap, Target } from "lucide-react";
+"use client";
+
+import { ArrowRight, BookOpen, Calculator, Calendar, ChevronRight, GraduationCap, Layout, PieChart, Star, Users, Brain, Activity, TrendingUp, Binary, Layers, ListOrdered, Dices, BarChart3, Coins, Shapes, Zap, Target, ClipboardCheck } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import TestsGrid from "@/components/TestsGrid";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const [showTests, setShowTests] = useState(false);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 w-full">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 w-full relative">
+      <AnimatePresence>
+        {showTests && <TestsGrid onClose={() => setShowTests(false)} />}
+      </AnimatePresence>
+
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 2xl:px-16 py-16">
         {/* Header */}
         <header className="text-center py-20 mb-20 border-b-2 border-gradient-to-r from-blue-300 via-indigo-300 to-purple-300">
@@ -15,22 +26,40 @@ export default function Home() {
             Comprehensive study material with visual mindmaps, detailed topics, and practice problems
           </p>
 
-          <div className="mt-10 inline-flex items-center gap-4 bg-indigo-50 border border-indigo-200 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-            <div className="bg-indigo-600 p-2 rounded-lg text-white group-hover:scale-110 transition-transform">
-              <BookOpen className="w-6 h-6" />
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
+            <div className="inline-flex items-center gap-4 bg-indigo-50 border border-indigo-200 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+              <div className="bg-indigo-600 p-2 rounded-lg text-white group-hover:scale-110 transition-transform">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-bold text-indigo-900 uppercase tracking-wider">New Resource</p>
+                <a
+                  href="https://mycbseguide.com/blog/cbse-class-11-applied-maths-sample-papers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 font-bold hover:underline flex items-center gap-1"
+                >
+                  Class 11 Applied Maths Sample Papers
+                  <ChevronRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="text-sm font-bold text-indigo-900 uppercase tracking-wider">New Resource</p>
-              <a
-                href="https://mycbseguide.com/blog/cbse-class-11-applied-maths-sample-papers/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-600 font-bold hover:underline flex items-center gap-1"
-              >
-                Class 11 Applied Maths Sample Papers
-                <ChevronRight className="w-4 h-4" />
-              </a>
-            </div>
+
+            <button
+              onClick={() => setShowTests(true)}
+              className="inline-flex items-center gap-4 bg-emerald-50 border border-emerald-200 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all group cursor-pointer"
+            >
+              <div className="bg-emerald-600 p-2 rounded-lg text-white group-hover:scale-110 transition-transform">
+                <ClipboardCheck className="w-6 h-6" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-bold text-emerald-900 uppercase tracking-wider">Practice Tests</p>
+                <p className="text-emerald-600 font-bold flex items-center gap-1">
+                  Start Chapter Wise MCQ
+                  <ChevronRight className="w-4 h-4" />
+                </p>
+              </div>
+            </button>
           </div>
         </header>
 

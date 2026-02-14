@@ -569,7 +569,7 @@ Every number has unique representation in both systems"
             <span className="text-4xl">❓</span>
             Important Questions & Problems
           </h2>
-          <ProblemList problems={problems} chapterId="chapter1" title="Chapter 1 Practice Problems" />
+          <ProblemList problems={problems} chapterId="chapter1" title="Chapter 1 Practice Problems" showTestButton={true} />
         </section>
 
         {/* Summary Section */}

@@ -339,7 +339,7 @@ export default function Chapter2() {
           <h2 className="text-4xl font-bold text-gray-900 mb-8 flex items-center gap-3">
             <span className="text-4xl">❓</span>Important Questions &amp; Problems
           </h2>
-          <ProblemList problems={problems} title="Chapter 2 Practice Problems" chapterId="chapter2" />
+          <ProblemList problems={problems} title="Chapter 2 Practice Problems" chapterId="chapter2" showTestButton={true} />
         </section>
 
         <section className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 p-10 rounded-xl border-l-4 border-indigo-600 shadow-lg">

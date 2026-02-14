@@ -118,6 +118,7 @@ export default function LogicalReasoningChapter() {
                                 problems={examProblems}
                                 title="Exam Patterns"
                                 chapterId="chapter17"
+                                showTestButton={true}
                             />
                         </div>
                     </div>

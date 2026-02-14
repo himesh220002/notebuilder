@@ -282,7 +282,7 @@ export default function StraightLineChapter() {
                         </div>
                     </div>
 
-                    <ProblemList problems={problems} chapterId="chapter12" title="Analysis Zone" />
+                    <ProblemList problems={problems} chapterId="chapter12" title="Analysis Zone" showTestButton={true} />
 
                     <div className="mt-24 space-y-12">
                         <header className="text-center">

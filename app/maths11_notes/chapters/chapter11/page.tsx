@@ -231,7 +231,7 @@ export default function CompoundInterestChapter() {
                         </div>
                     </div>
 
-                    <ProblemList problems={problems} chapterId="chapter11" title="Practice Laboratory" />
+                    <ProblemList problems={problems} chapterId="chapter11" title="Practice Laboratory" showTestButton={true} />
 
                     <div className="mt-20">
                         <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 text-white relative overflow-hidden">

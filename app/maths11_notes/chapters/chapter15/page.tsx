@@ -257,7 +257,7 @@ export default function UtilityBillsChapter() {
                         </div>
                     </div>
 
-                    <ProblemList problems={problems} chapterId="chapter15" title="Billing Analysis Zone" />
+                    <ProblemList problems={problems} chapterId="chapter15" title="Billing Analysis Zone" showTestButton={true} />
 
                     <div className="mt-24 space-y-12">
                         <header className="text-center">
