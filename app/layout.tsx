@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import TopLoader from "@/components/TopLoader";
+import AIChatBot from "@/components/AIChatBot";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,7 +33,10 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <TopLoader />
         </Suspense>
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
+        <AIChatBot />
       </body>
     </html>
   );

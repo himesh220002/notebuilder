@@ -71,6 +71,9 @@ export default function MathText({ text, className = '', block = false }: MathTe
         'bar': '\\bar',
         'Leftrightarrow': '\\Leftrightarrow',
         'iff': '\\iff',
+        'lim': '\\lim',
+        'sum': '\\sum',
+        'int': '\\int',
     };
 
     // Map for symbol conversions
@@ -103,21 +106,16 @@ export default function MathText({ text, className = '', block = false }: MathTe
 
         // 1. Replace Common Symbols
         Object.entries(symbolMap).forEach(([symbol, replacement]) => {
-            // Escape special regex characters in symbol if necessary
             const safeSymbol = symbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             processed = processed.replace(new RegExp(safeSymbol, 'g'), replacement);
         });
 
-        // 2. Replace Keywords (using word boundaries \b to avoid partial matches)
-        // We iterate keys sorted by length desc to prevent substring issues (though \b handles most)
+        // 2. Replace Keywords
         Object.keys(keywordMap).forEach((keyword) => {
             const replacement = keywordMap[keyword];
-            // Regex: checks for optional preceding backslash
             const regex = new RegExp(`(\\\\)?\\b${keyword}\\b`, 'g');
             processed = processed.replace(regex, (match, prefix) => {
-                // If there's a preceding backslash, it's already an escaped command; leave it alone
                 if (prefix) return match;
-                // Otherwise replace the keyword with its LaTeX command
                 return replacement;
             });
         });
@@ -125,12 +123,16 @@ export default function MathText({ text, className = '', block = false }: MathTe
         return processed;
     };
 
+    // Helper to check if a string contains un-delimited LaTeX
+    const isNakedLatex = (str: string) => {
+        return /\\(frac|lim|sum|int|sqrt|alpha|beta|gamma|delta|theta)|[\^_]\{/.test(str);
+    };
+
     // Render logic
     const renderContent = () => {
-        // Handle explicit block mode requested via prop
+        // Handle explicit block mode
         if (block) {
             let contentToRender = text.trim();
-            // Basic cleanup to remove wrapping delimiters if present
             if (contentToRender.startsWith('$$') && contentToRender.endsWith('$$')) {
                 contentToRender = contentToRender.slice(2, -2);
             } else if (contentToRender.startsWith('$') && contentToRender.endsWith('$')) {
@@ -150,36 +152,36 @@ export default function MathText({ text, className = '', block = false }: MathTe
             );
         }
 
-        // Inline / Mixed content mode
-        // If the entire text is wrapped in '$' (e.g. "$x+y$"), strip it to avoid empty start/end parts
-        let mixedText = text;
-        if (mixedText.startsWith('$') && mixedText.endsWith('$') && mixedText.split('$').length === 3) {
-            // It's a single math expression wrapped in $
-            mixedText = mixedText.slice(1, -1);
-            return (
-                <span
-                    className={className}
-                    dangerouslySetInnerHTML={{
-                        __html: katex.renderToString(processMath(mixedText), {
-                            throwOnError: false,
-                            displayMode: false
-                        })
-                    }}
-                />
-            );
-        }
+        // Improved splitting logic using regex to capture delimiters
+        // It matches both $$...$$ and $...$
+        const parts = text.split(/(\$\$[\s\S]*?\$\$|\$[\s\S]*?\$)/g);
 
-        const parts = mixedText.split('$');
         return (
             <span className={className}>
                 {parts.map((part, index) => {
-                    // Even index = Text, Odd index = Math
-                    if (index % 2 === 0) {
-                        // Filter out orphan '$' if any weirdness happened
-                        return <span key={index}>{part}</span>;
-                    } else {
-                        // Math part: ensure we don't accidentally pass empty
-                        if (!part.trim()) return null;
+                    if (!part) return null;
+
+                    // Check if this part is wrapped in delimiters
+                    const isBlock = part.startsWith('$$') && part.endsWith('$$');
+                    const isInline = part.startsWith('$') && part.endsWith('$');
+
+                    if (isBlock || isInline) {
+                        const content = isBlock ? part.slice(2, -2) : part.slice(1, -1);
+                        return (
+                            <span
+                                key={index}
+                                dangerouslySetInnerHTML={{
+                                    __html: katex.renderToString(processMath(content), {
+                                        throwOnError: false,
+                                        displayMode: isBlock
+                                    })
+                                }}
+                            />
+                        );
+                    }
+
+                    // For parts NOT wrapped in $, check if it's "naked" LaTeX
+                    if (isNakedLatex(part)) {
                         return (
                             <span
                                 key={index}
@@ -192,6 +194,9 @@ export default function MathText({ text, className = '', block = false }: MathTe
                             />
                         );
                     }
+
+                    // Otherwise, just plain text
+                    return <span key={index}>{part}</span>;
                 })}
             </span>
         );
