@@ -11,8 +11,8 @@ const CoordinateGeometryVisual = () => {
     ]);
 
     return (
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden my-12">
-            <div className="bg-slate-900 p-6 text-white flex justify-between items-center">
+        <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden my-8 sm:my-12 text-black">
+            <div className="bg-slate-900 p-6 sm:p-8 text-white flex justify-between items-center">
                 <div>
                     <div className="flex items-center gap-3 mb-1">
                         <Target className="w-6 h-6 text-sky-400" />
@@ -22,8 +22,8 @@ const CoordinateGeometryVisual = () => {
                 </div>
             </div>
 
-            <div className="p-8">
-                <div className="relative aspect-video bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl overflow-hidden cursor-crosshair group">
+            <div className="p-4 sm:p-8">
+                <div className="relative aspect-[4/3] sm:aspect-video bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl overflow-hidden cursor-crosshair group">
                     {/* Grid Lines */}
                     <div className="absolute inset-0 opacity-20 pointer-events-none"
                         style={{ backgroundImage: 'radial-gradient(#64748b 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

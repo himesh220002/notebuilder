@@ -37,9 +37,9 @@ export default function StraightLineChapter() {
                         <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
                         Class 11 Applied Mathematics
                     </div>
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 md:mb-8 tracking-tighter">
+                    <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 md:mb-8 tracking-tighter">
                         Straight <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 italic text-5xl sm:text-7xl md:text-8xl lg:text-9xl">Lines</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 italic text-4xl sm:text-7xl md:text-8xl lg:text-9xl">Lines</span>
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium px-4">
                         The intersection of algebra and geometry. From fundamental distances to complex normal forms and coordinate transformations.
@@ -75,15 +75,15 @@ export default function StraightLineChapter() {
                                     </p>
                                 </div>
 
-                                <div className="p-8 bg-slate-50 rounded-3xl border border-slate-200">
-                                    <h3 className="text-xl font-black mb-6 text-indigo-950">Section & Centroid</h3>
-                                    <div className="space-y-4 text-xs font-bold text-slate-500">
-                                        <div className="p-4 bg-white rounded-xl shadow-sm flex items-center justify-between gap-4">
-                                            <span>Centroid ($G$)</span>
+                                <div className="p-6 sm:p-8 bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-200">
+                                    <h3 className="text-lg sm:text-xl font-black mb-6 text-indigo-950">Section & Centroid</h3>
+                                    <div className="space-y-4 text-[10px] sm:text-xs font-bold text-slate-500">
+                                        <div className="p-3 sm:p-4 bg-white rounded-xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 overflow-x-auto">
+                                            <span className="shrink-0 text-indigo-600 sm:text-slate-500">Centroid ($G$)</span>
                                             <MathText text={straightLineData.fundamentals.centroid} />
                                         </div>
-                                        <div className="p-4 bg-white rounded-xl shadow-sm flex items-center justify-between gap-4">
-                                            <span>Internal Division</span>
+                                        <div className="p-3 sm:p-4 bg-white rounded-xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 overflow-x-auto">
+                                            <span className="shrink-0 text-indigo-600 sm:text-slate-500">Internal Division</span>
                                             <MathText text={straightLineData.fundamentals.sectionFormulaInternal} />
                                         </div>
                                     </div>
@@ -94,29 +94,29 @@ export default function StraightLineChapter() {
                                 <CoordinateGeometryVisual />
 
                                 {/* Focused Coefficient Explorer */}
-                                <div className="mt-8 bg-slate-900 rounded-[2.5rem] p-10 text-white border-t-8 border-indigo-500 shadow-2xl">
-                                    <div className="flex items-center gap-3 mb-8">
-                                        <Binary className="w-6 h-6 text-indigo-400" />
-                                        <h4 className="text-xl font-black italic tracking-tight">The General Key: $Ax + By + C = 0$</h4>
+                                <div className="mt-8 bg-slate-900 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 text-white border-t-8 border-indigo-500 shadow-2xl">
+                                    <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                                        <Binary className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
+                                        <h4 className="text-lg sm:text-xl font-black italic tracking-tight">The General Key: $Ax + By + C = 0$</h4>
                                     </div>
-                                    <div className="grid sm:grid-cols-3 gap-6">
-                                        <div className="p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
-                                            <span className="block text-[10px] font-black text-indigo-400 uppercase mb-2 tracking-widest">Slope (m)</span>
-                                            <div className="text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-A/B$</div>
-                                            <p className="text-[10px] text-slate-500 font-bold uppercase">Vertical Ratio</p>
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                                        <div className="p-4 sm:p-5 bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
+                                            <span className="block text-[9px] sm:text-[10px] font-black text-indigo-400 uppercase mb-2 tracking-widest">Slope (m)</span>
+                                            <div className="text-xl sm:text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-A/B$</div>
+                                            <p className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase">Vertical Ratio</p>
                                         </div>
-                                        <div className="p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
-                                            <span className="block text-[10px] font-black text-emerald-400 uppercase mb-2 tracking-widest">Y-Intercept</span>
-                                            <div className="text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-C/B$</div>
-                                            <p className="text-[10px] text-slate-500 font-bold uppercase">Intersection @ Y</p>
+                                        <div className="p-4 sm:p-5 bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
+                                            <span className="block text-[9px] sm:text-[10px] font-black text-emerald-400 uppercase mb-2 tracking-widest">Y-Intercept</span>
+                                            <div className="text-xl sm:text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-C/B$</div>
+                                            <p className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase">Intersection @ Y</p>
                                         </div>
-                                        <div className="p-5 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
-                                            <span className="block text-[10px] font-black text-amber-400 uppercase mb-2 tracking-widest">X-Intercept</span>
-                                            <div className="text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-C/A$</div>
-                                            <p className="text-[10px] text-slate-500 font-bold uppercase">Intersection @ X</p>
+                                        <div className="p-4 sm:p-5 bg-white/5 rounded-xl sm:rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group">
+                                            <span className="block text-[9px] sm:text-[10px] font-black text-amber-400 uppercase mb-2 tracking-widest">X-Intercept</span>
+                                            <div className="text-xl sm:text-2xl font-black mb-1 group-hover:scale-110 transition-transform">$-C/A$</div>
+                                            <p className="text-[9px] sm:text-[10px] text-slate-500 font-bold uppercase">Intersection @ X</p>
                                         </div>
                                     </div>
-                                    <div className="mt-8 p-4 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-[11px] text-indigo-300 font-medium italic text-center">
+                                    <div className="mt-6 sm:mt-8 p-4 bg-indigo-500/10 rounded-xl border border-indigo-500/20 text-[10px] sm:text-[11px] text-indigo-300 font-medium italic text-center">
                                         Tip: Always convert non-standard equations to General Form before extraction.
                                     </div>
                                 </div>
@@ -136,18 +136,18 @@ export default function StraightLineChapter() {
                     <TrigVisual />
 
                     {/* Trig Table Section */}
-                    <div className="mt-16 bg-white rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden">
-                        <div className="p-8 bg-indigo-900 text-white flex justify-between items-center">
+                    <div className="mt-16 bg-white rounded-2xl sm:rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden">
+                        <div className="p-6 sm:p-8 bg-indigo-900 text-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                             <div>
-                                <h3 className="text-2xl font-black flex items-center gap-2">
-                                    <Activity className="w-6 h-6" />
+                                <h3 className="text-xl sm:text-2xl font-black flex items-center gap-2">
+                                    <Activity className="w-5 h-5 sm:w-6 sm:h-6" />
                                     The Trig Atlas
                                 </h3>
-                                <p className="text-indigo-300 text-sm">Essential values from 0° to 180° for slope calculations.</p>
+                                <p className="text-indigo-300 text-xs sm:text-sm">Essential values from 0° to 180° for slope calculations.</p>
                             </div>
-                            <div className="text-right hidden md:block">
-                                <span className="block text-[10px] font-black text-indigo-400 uppercase tracking-widest">ASTC Rule</span>
-                                <span className="text-xs font-bold">Only Sin is +ve in Q2 (90-180)</span>
+                            <div className="text-right">
+                                <span className="block text-[9px] sm:text-[10px] font-black text-indigo-400 uppercase tracking-widest">ASTC Rule</span>
+                                <span className="text-[10px] sm:text-xs font-bold">Only Sin is +ve in Q2 (90-180)</span>
                             </div>
                         </div>
                         <div className="overflow-x-auto">
@@ -199,32 +199,33 @@ export default function StraightLineChapter() {
                         ))}
                     </div>
 
-                    <div className="mt-12 bg-slate-900 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row gap-12 items-center">
-                        <div className="flex-1">
-                            <h4 className="text-3xl font-black mb-6 text-indigo-400">Angle Between Lines</h4>
-                            <p className="text-slate-400 text-sm mb-8 leading-relaxed">
+                    <div className="mt-12 bg-slate-900 p-6 sm:p-10 rounded-2xl sm:rounded-[2.5rem] text-white flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
+                        <div className="flex-1 w-full">
+                            <h4 className="text-2xl sm:text-3xl font-black mb-4 sm:mb-6 text-indigo-400 leading-tight">Angle Between Lines</h4>
+                            <p className="text-slate-400 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">
                                 The acute angle $\theta$ between two lines with slopes $m_1$ and $m_2$ is determined by the tangent formula.
                             </p>
-                            <div className="bg-white/10 p-6 rounded-2xl border border-white/10">
+                            <div className="bg-white/10 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/10 overflow-x-auto">
                                 <MathText text={straightLineData.angles.betweenLines} />
                             </div>
                         </div>
-                        <div className="md:w-px h-32 bg-slate-800" />
-                        <div className="flex-1 space-y-4">
+                        <div className="hidden md:block w-px h-32 bg-slate-800" />
+                        <div className="flex-1 w-full space-y-4">
                             <div className="flex items-center gap-4">
-                                <div className="w-4 h-4 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]" />
-                                <span className="font-black text-xs uppercase tracking-widest">Parallel: $m_1 = m_2$</span>
+                                <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]" />
+                                <span className="font-black text-[10px] sm:text-xs uppercase tracking-widest">Parallel: $m_1 = m_2$</span>
                             </div>
                             <div className="flex items-center gap-4">
-                                <div className="w-4 h-4 rounded-full bg-rose-500 shadow-[0_0_10px_#f43f5e]" />
-                                <span className="font-black text-xs uppercase tracking-widest">Perpendicular: $m_1 m_2 = -1$</span>
+                                <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-rose-500 shadow-[0_0_10px_#f43f5e]" />
+                                <span className="font-black text-[10px] sm:text-xs uppercase tracking-widest">Perpendicular: $m_1 m_2 = -1$</span>
                             </div>
-                            <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
-                                <span className="block text-[10px] font-bold text-indigo-400 uppercase mb-2">Compound Trig</span>
+                            <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 overflow-x-auto">
+                                <span className="block text-[9px] sm:text-[10px] font-bold text-indigo-400 uppercase mb-2">Compound Trig</span>
                                 <MathText text={straightLineData.reductionFormulas.tanAMinusB} />
                             </div>
                         </div>
                     </div>
+
                 </section>
 
                 {/* 4. Distances & Proximity */}

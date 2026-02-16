@@ -171,7 +171,7 @@ export default function Home() {
               <div className="flex items-start justify-between mb-8">
                 <div>
                   <h2 className="text-5xl font-black text-emerald-900 mb-2">Chapter 5</h2>
-                  <h3 className="text-2xl font-bold text-gray-800">Counting & Permutations</h3>
+                  <h3 className="text-2xl font-bold text-gray-800">Permutations & Combinations</h3>
                 </div>
                 <Dices className="w-20 h-20 text-emerald-500 group-hover:scale-110 transition-transform" />
               </div>

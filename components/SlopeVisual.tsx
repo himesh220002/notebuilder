@@ -13,8 +13,8 @@ const SlopeVisual = () => {
     };
 
     return (
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden my-12">
-            <div className="bg-indigo-900 p-6 text-white">
+        <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden my-8 sm:my-12">
+            <div className="bg-indigo-900 p-6 sm:p-8 text-white">
                 <div className="flex items-center gap-3 mb-2">
                     <Compass className="w-6 h-6 text-amber-400" />
                     <h3 className="text-xl font-bold">Slope & Inclination</h3>
@@ -22,7 +22,7 @@ const SlopeVisual = () => {
                 <p className="text-indigo-300 text-sm">Observe how the angle of inclination $\theta$ affects the slope $m = \tan \theta$.</p>
             </div>
 
-            <div className="p-8">
+            <div className="p-6 sm:p-10">
                 <div className="grid lg:grid-cols-2 gap-12">
                     <div className="relative aspect-square bg-slate-50 border-2 border-slate-200 rounded-[2.5rem] flex items-center justify-center overflow-hidden">
                         {/* Quadrant Lines */}
@@ -58,7 +58,7 @@ const SlopeVisual = () => {
                     </div>
 
                     <div className="space-y-6 flex flex-col justify-center">
-                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <div className="bg-slate-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200">
                             <label className="text-xs font-black text-slate-400 uppercase mb-4 block underline decoration-indigo-200 underline-offset-4">Angle of Inclination: {angle}°</label>
                             <input
                                 type="range"

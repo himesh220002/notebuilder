@@ -33,8 +33,8 @@ const TrigVisual = () => {
     };
 
     return (
-        <div className="bg-white rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden my-12">
-            <div className="bg-slate-900 p-8 text-white">
+        <div className="bg-white rounded-2xl sm:rounded-[2.5rem] shadow-xl border border-slate-100 overflow-hidden my-8 sm:my-12">
+            <div className="bg-slate-900 p-6 sm:p-8 text-white">
                 <div className="flex items-center gap-3 mb-2">
                     <Activity className="w-6 h-6 text-emerald-400" />
                     <h3 className="text-2xl font-black italic">Wave Functions</h3>
@@ -42,8 +42,8 @@ const TrigVisual = () => {
                 <p className="text-slate-400 text-sm">Motion of Sin and Cos from $0^\circ \to 180^\circ$</p>
             </div>
 
-            <div className="p-8">
-                <div className="h-[350px] w-full bg-slate-50 rounded-3xl p-4">
+            <div className="p-4 sm:p-8">
+                <div className="h-[250px] sm:h-[350px] w-full bg-slate-50 rounded-2xl sm:rounded-3xl p-4">
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={data}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
