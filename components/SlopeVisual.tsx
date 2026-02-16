@@ -41,7 +41,7 @@ const SlopeVisual = () => {
                         </div>
 
                         {/* Angle Arc */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 300">
                             <path
                                 d={`M ${150 + 40} 150 A 40 40 0 0 0 ${150 + 40 * Math.cos(-angle * Math.PI / 180)} ${150 + 40 * Math.sin(-angle * Math.PI / 180)}`}
                                 fill="none"

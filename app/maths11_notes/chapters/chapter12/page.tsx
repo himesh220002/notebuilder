@@ -27,10 +27,10 @@ import { straightLineData, problems, examProblems } from "./data";
 
 export default function StraightLineChapter() {
     return (
-        <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900">
+        <div className="min-h-screen bg-[#f1f5f9] font-sans text-slate-900 overflow-x-hidden w-full">
             <ChapterNavbar currentChapter={12} totalChapters={17} />
 
-            <main className="max-w-[1300px] mx-auto px-6 py-16">
+            <main className="max-w-[1300px] mx-auto px-4 sm:px-6 py-12 sm:py-16 overflow-x-hidden">
                 {/* Modern Hero Section */}
                 <header className="mb-16 md:mb-24 text-center">
                     <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 bg-indigo-100 text-indigo-700 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest mb-6 md:mb-8 border border-indigo-200 shadow-sm">
@@ -52,11 +52,11 @@ export default function StraightLineChapter() {
                             <Grid className="w-32 h-32 sm:w-64 sm:h-64 text-indigo-900" />
                         </div>
 
-                        <div className="flex items-center gap-4 sm:gap-6 mb-12 sm:mb-16 relative">
-                            <div className="w-14 h-14 sm:w-20 sm:h-20 bg-indigo-900 text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-xl sm:text-3xl font-black shadow-2xl rotate-3">1</div>
+                        <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-16 relative">
+                            <div className="w-12 h-12 sm:w-20 sm:h-20 bg-indigo-900 text-white rounded-xl sm:rounded-3xl flex items-center justify-center text-lg sm:text-3xl font-black shadow-2xl rotate-3 shrink-0">1</div>
                             <div>
-                                <h2 className="text-2xl sm:text-4xl font-black text-slate-900">Foundational Geometry</h2>
-                                <p className="text-slate-400 font-bold uppercase text-[9px] sm:text-[10px] tracking-[0.2em]">Coordinates & Ratios</p>
+                                <h2 className="text-xl sm:text-4xl font-black text-slate-900 leading-tight">Foundational Geometry</h2>
+                                <p className="text-slate-400 font-bold uppercase text-[8px] sm:text-[10px] tracking-[0.2em]">Coordinates & Ratios</p>
                             </div>
                         </div>
 
@@ -127,9 +127,9 @@ export default function StraightLineChapter() {
 
                 {/* 2. Slope and Trig Section */}
                 <section className="mb-28">
-                    <div className="flex items-center gap-4 mb-12">
-                        <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg ring-4 ring-amber-50">2</div>
-                        <h2 className="text-4xl font-black text-slate-900 tracking-tight italic">Slope & Trigonometric Relation</h2>
+                    <div className="flex items-center gap-4 mb-10 sm:mb-12">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-amber-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-lg ring-4 ring-amber-50 shrink-0">2</div>
+                        <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight italic leading-tight">Slope & Trigonometric Relation</h2>
                     </div>
 
                     <SlopeVisual />

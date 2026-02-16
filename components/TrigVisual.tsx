@@ -91,19 +91,19 @@ const TrigVisual = () => {
                     </ResponsiveContainer>
                 </div>
 
-                <div className="mt-8 overflow-x-auto pb-4">
-                    <div className="flex gap-3 min-w-max">
+                <div className="mt-8 overflow-x-auto pb-4 custom-scrollbar snap-x">
+                    <div className="flex gap-3 sm:gap-4 w-min sm:w-auto">
                         {markers.map(m => (
-                            <div key={m} className="p-4 bg-slate-50 rounded-2xl text-center border border-slate-100 w-28 shrink-0 hover:bg-white hover:shadow-lg transition-all">
+                            <div key={m} className="p-4 bg-slate-50 rounded-2xl text-center border border-slate-100 w-24 sm:w-28 shrink-0 hover:bg-white hover:shadow-lg transition-all snap-center">
                                 <span className="block text-xs font-black text-slate-400 mb-2">{m}°</span>
                                 <div className="space-y-1">
-                                    <div className="text-[10px] font-bold text-emerald-600 flex flex-col">
+                                    <div className="text-[10px] sm:text-xs font-bold text-emerald-600 flex flex-col items-center">
                                         <span className="opacity-50 text-[8px] uppercase tracking-tighter">Sin</span>
                                         <MathText text={`$${getExact(m).sin}$`} />
                                         <span className="text-[8px] text-slate-400">({Math.sin((m * Math.PI) / 180).toFixed(2)})</span>
                                     </div>
                                     <div className="w-full h-px bg-slate-200 my-1" />
-                                    <div className="text-[10px] font-bold text-indigo-600 flex flex-col">
+                                    <div className="text-[10px] sm:text-xs font-bold text-indigo-600 flex flex-col items-center">
                                         <span className="opacity-50 text-[8px] uppercase tracking-tighter">Cos</span>
                                         <MathText text={`$${getExact(m).cos}$`} />
                                         <span className="text-[8px] text-slate-400">({Math.cos((m * Math.PI) / 180).toFixed(2)})</span>

@@ -6,8 +6,8 @@ import MathText from "@/components/MathText";
 
 const CoordinateGeometryVisual = () => {
     const [points, setPoints] = useState([
-        { x: 100, y: 100, label: 'A (x1, y1)' },
-        { x: 300, y: 200, label: 'B (x2, y2)' }
+        { x: 25, y: 30, label: 'A (x1, y1)' },
+        { x: 75, y: 70, label: 'B (x2, y2)' }
     ]);
 
     return (
@@ -33,13 +33,13 @@ const CoordinateGeometryVisual = () => {
                     <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-300 -translate-y-1/2" />
 
                     {/* Connecting Line */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <line
                             x1={points[0].x} y1={points[0].y}
                             x2={points[1].x} y2={points[1].y}
                             stroke="#6366f1"
-                            strokeWidth="3"
-                            strokeDasharray="8 4"
+                            strokeWidth="1"
+                            strokeDasharray="2 1"
                         />
                     </svg>
 
@@ -47,10 +47,10 @@ const CoordinateGeometryVisual = () => {
                     {points.map((p, i) => (
                         <div
                             key={i}
-                            className="absolute -translate-x-1/2 -translate-y-1/2 p-2 group"
-                            style={{ left: p.x, top: p.y }}
+                            className="absolute -translate-x-1/2 -translate-y-1/2 p-2 group z-10"
+                            style={{ left: `${p.x}%`, top: `${p.y}%` }}
                         >
-                            <div className="w-4 h-4 bg-indigo-600 rounded-full ring-4 ring-indigo-100 shadow-lg group-hover:scale-125 transition-transform" />
+                            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-indigo-600 rounded-full ring-4 ring-indigo-100 shadow-lg group-hover:scale-125 transition-transform" />
                             <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-slate-900 text-white text-[10px] px-2 py-1 rounded-lg">
                                 {p.label}
                             </div>
@@ -59,10 +59,10 @@ const CoordinateGeometryVisual = () => {
 
                     {/* Midpoint Info */}
                     <div
-                        className="absolute bg-white/90 backdrop-blur-sm p-3 rounded-xl border border-indigo-100 shadow-xl text-[10px] font-bold text-indigo-900"
-                        style={{ left: (points[0].x + points[1].x) / 2, top: (points[0].y + points[1].y) / 2 }}
+                        className="absolute bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-indigo-100 shadow-xl text-[10px] font-bold text-indigo-900 z-10"
+                        style={{ left: `${(points[0].x + points[1].x) / 2}%`, top: `${(points[0].y + points[1].y) / 2}%` }}
                     >
-                        <MathText text={`$d \\approx ${Math.sqrt(Math.pow(points[1].x - points[0].x, 2) + Math.pow(points[1].y - points[0].y, 2)).toFixed(1)}$`} />
+                        <MathText text={`$d \\approx \\sqrt{(\\Delta x)^2 + (\\Delta y)^2}$`} />
                     </div>
                 </div>
 

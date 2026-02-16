@@ -30,9 +30,9 @@ const ChapterNavbar: React.FC<ChapterNavbarProps> = ({ currentChapter, totalChap
     };
 
     return (
-        <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-indigo-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+        <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-indigo-100 w-full overflow-x-hidden">
+            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-14 sm:h-16">
                     {/* Left: Previous Button */}
                     <div className="flex-1 flex justify-start">
                         {prevChapter ? (
