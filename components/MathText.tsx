@@ -141,7 +141,7 @@ export default function MathText({ text, className = '', block = false }: MathTe
 
             return (
                 <div
-                    className={className}
+                    className={`${className} overflow-x-auto max-w-full p-1 custom-scrollbar`}
                     dangerouslySetInnerHTML={{
                         __html: katex.renderToString(processMath(contentToRender), {
                             throwOnError: false,

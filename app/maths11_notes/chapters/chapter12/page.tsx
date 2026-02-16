@@ -32,46 +32,45 @@ export default function StraightLineChapter() {
 
             <main className="max-w-[1300px] mx-auto px-6 py-16">
                 {/* Modern Hero Section */}
-                <header className="mb-24 text-center">
-                    <div className="inline-flex items-center gap-2 px-6 py-2 bg-indigo-100 text-indigo-700 rounded-full text-xs font-black uppercase tracking-widest mb-8 border border-indigo-200 shadow-sm">
-                        <Zap className="w-4 h-4" />
+                <header className="mb-16 md:mb-24 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 bg-indigo-100 text-indigo-700 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest mb-6 md:mb-8 border border-indigo-200 shadow-sm">
+                        <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
                         Class 11 Applied Mathematics
                     </div>
-                    <h1 className="text-7xl md:text-8xl font-black text-slate-900 mb-8 tracking-tighter">
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 md:mb-8 tracking-tighter">
                         Straight <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 italic">Lines</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 italic text-5xl sm:text-7xl md:text-8xl lg:text-9xl">Lines</span>
                     </h1>
-                    <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
+                    <p className="text-base sm:text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium px-4">
                         The intersection of algebra and geometry. From fundamental distances to complex normal forms and coordinate transformations.
                     </p>
                 </header>
 
-                {/* 1. Fundamental Formulas */}
-                <section className="mb-28">
-                    <div className="bg-white rounded-[3rem] shadow-2xl border border-slate-100 p-12 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-8 opacity-5">
-                            <Grid className="w-64 h-64 text-indigo-900" />
+                <section className="mb-20 md:mb-28">
+                    <div className="bg-white rounded-[2rem] sm:rounded-[3rem] shadow-2xl border border-slate-100 p-6 sm:p-12 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 sm:p-8 opacity-5">
+                            <Grid className="w-32 h-32 sm:w-64 sm:h-64 text-indigo-900" />
                         </div>
 
-                        <div className="flex items-center gap-6 mb-16 relative">
-                            <div className="w-20 h-20 bg-indigo-900 text-white rounded-3xl flex items-center justify-center text-3xl font-black shadow-2xl rotate-3">1</div>
+                        <div className="flex items-center gap-4 sm:gap-6 mb-12 sm:mb-16 relative">
+                            <div className="w-14 h-14 sm:w-20 sm:h-20 bg-indigo-900 text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-xl sm:text-3xl font-black shadow-2xl rotate-3">1</div>
                             <div>
-                                <h2 className="text-4xl font-black text-slate-900">Foundational Geometry</h2>
-                                <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em]">Coordinates & Ratios</p>
+                                <h2 className="text-2xl sm:text-4xl font-black text-slate-900">Foundational Geometry</h2>
+                                <p className="text-slate-400 font-bold uppercase text-[9px] sm:text-[10px] tracking-[0.2em]">Coordinates & Ratios</p>
                             </div>
                         </div>
 
                         <div className="grid lg:grid-cols-2 gap-16">
                             <div className="space-y-8">
-                                <div className="p-8 bg-slate-50 rounded-3xl border border-slate-200 hover:border-indigo-300 transition-all group">
-                                    <h3 className="text-xl font-black mb-6 flex items-center gap-2 text-indigo-950">
-                                        <Target className="w-5 h-5 text-indigo-600" />
+                                <div className="p-4 sm:p-8 bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-200 hover:border-indigo-300 transition-all group">
+                                    <h3 className="text-lg sm:text-xl font-black mb-4 sm:mb-6 flex items-center gap-2 text-indigo-950">
+                                        <Target className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                                         Distance Formula
                                     </h3>
-                                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-4 transform group-hover:-rotate-1 transition-transform">
+                                    <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm border border-slate-100 mb-4 transform group-hover:-rotate-1 transition-transform overflow-x-auto">
                                         <MathText text={straightLineData.fundamentals.distanceFormula} />
                                     </div>
-                                    <p className="text-sm text-slate-600 leading-relaxed italic">
+                                    <p className="text-[12px] sm:text-sm text-slate-600 leading-relaxed italic">
                                         Derived from the Pythagorean theorem: $a^2 + b^2 = c^2$.
                                     </p>
                                 </div>
@@ -178,9 +177,9 @@ export default function StraightLineChapter() {
 
                 {/* 3. Line Equation Forms */}
                 <section className="mb-28">
-                    <div className="flex items-center gap-6 mb-16 relative">
-                        <div className="w-20 h-20 bg-fuchsia-600 text-white rounded-3xl flex items-center justify-center text-3xl font-black shadow-2xl">3</div>
-                        <h2 className="text-5xl font-black text-slate-900 tracking-tighter italic underline decoration-fuchsia-200 underline-offset-8">Forms of Equation</h2>
+                    <div className="flex items-center gap-4 mb-16 relative">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 bg-fuchsia-600 text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-xl sm:text-3xl font-black shadow-2xl">3</div>
+                        <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tighter italic underline decoration-fuchsia-200 underline-offset-8 leading-tight">Forms of Equation</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -230,38 +229,38 @@ export default function StraightLineChapter() {
 
                 {/* 4. Distances & Proximity */}
                 <section className="mb-28">
-                    <div className="flex items-center gap-6 mb-16 relative">
-                        <div className="w-20 h-20 bg-emerald-600 text-white rounded-3xl flex items-center justify-center text-3xl font-black shadow-2xl rotate-3">4</div>
-                        <h2 className="text-5xl font-black text-slate-900 tracking-tighter italic">Distances & Proximity</h2>
+                    <div className="flex items-center gap-4 sm:gap-6 mb-12 sm:mb-16 relative">
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 bg-emerald-600 text-white rounded-2xl sm:rounded-3xl flex items-center justify-center text-xl sm:text-3xl font-black shadow-2xl rotate-3">4</div>
+                        <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tighter italic leading-tight">Distances & Proximity</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center">
-                                    <Target className="w-6 h-6" />
+                        <div className="bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+                            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                                    <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
-                                <h3 className="text-2xl font-black text-slate-900">Point to Line</h3>
+                                <h3 className="text-xl sm:text-2xl font-black text-slate-900">Point to Line</h3>
                             </div>
-                            <p className="text-slate-500 text-sm mb-8 leading-relaxed font-medium">
+                            <p className="text-slate-500 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed font-medium">
                                 The perpendicular distance $d$ from a point $P(x_1, y_1)$ to the line $Ax + By + C = 0$.
                             </p>
-                            <div className="bg-slate-900 p-8 rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl">
+                            <div className="bg-slate-900 p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl overflow-x-auto">
                                 <MathText text={straightLineData.distances.pointToLine} />
                             </div>
                         </div>
 
-                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-blue-200 transition-all group">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
-                                    <Ruler className="w-6 h-6" />
+                        <div className="bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl border border-slate-100 hover:border-blue-200 transition-all group">
+                            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                                    <Ruler className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
-                                <h3 className="text-2xl font-black text-slate-900">Parallel Lines</h3>
+                                <h3 className="text-xl sm:text-2xl font-black text-slate-900">Parallel Lines</h3>
                             </div>
-                            <p className="text-slate-500 text-sm mb-8 leading-relaxed font-medium">
+                            <p className="text-slate-500 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed font-medium">
                                 The distance $d$ between two parallel lines $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$.
                             </p>
-                            <div className="bg-indigo-900 p-8 rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl">
+                            <div className="bg-indigo-900 p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-white transform group-hover:scale-[1.02] transition-transform shadow-2xl overflow-x-auto">
                                 <MathText text={straightLineData.distances.parallelLines} />
                             </div>
                         </div>
@@ -272,8 +271,8 @@ export default function StraightLineChapter() {
                 <section className="mb-28">
                     <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-16">
                         <div>
-                            <span className="text-xs font-black text-indigo-600 uppercase tracking-[0.3em] block mb-2">Practice Laboratory</span>
-                            <h2 className="text-6xl font-black text-slate-900 tracking-tighter">Geometric <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 italic">Workouts</span></h2>
+                            <span className="text-[10px] sm:text-xs font-black text-indigo-600 uppercase tracking-[0.3em] block mb-2">Practice Laboratory</span>
+                            <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tighter leading-tight">Geometric <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 italic">Workouts</span></h2>
                         </div>
                         <div className="h-px flex-1 bg-slate-200 mx-8 hidden lg:block" />
                         <div className="flex gap-4">
@@ -286,20 +285,20 @@ export default function StraightLineChapter() {
 
                     <div className="mt-24 space-y-12">
                         <header className="text-center">
-                            <h3 className="text-3xl font-black text-slate-900 mb-2 italic">Competitive Corner</h3>
-                            <p className="text-slate-400 font-bold uppercase text-[10px] tracking-widest underline decoration-indigo-200 underline-offset-4">Board & Previous Year Questions</p>
+                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-2 italic">Competitive Corner</h3>
+                            <p className="text-slate-400 font-bold uppercase text-[9px] sm:text-[10px] tracking-widest underline decoration-indigo-200 underline-offset-4">Board & Previous Year Questions</p>
                         </header>
                         <div className="grid md:grid-cols-2 gap-8">
                             {examProblems.map((prob, idx) => (
-                                <div key={idx} className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-50 hover:border-indigo-200 transition-colors relative group">
-                                    <div className="absolute top-0 right-0 p-6">
-                                        <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-lg text-[10px] font-black uppercase tracking-tighter">
+                                <div key={idx} className="bg-white p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl border border-slate-50 hover:border-indigo-200 transition-colors relative group">
+                                    <div className="absolute top-0 right-0 p-4 sm:p-6">
+                                        <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-lg text-[9px] sm:text-[10px] font-black uppercase tracking-tighter">
                                             {prob.examTag}
                                         </span>
                                     </div>
-                                    <h4 className="text-xl font-bold text-slate-900 mb-8 pr-20 leading-snug">{prob.question}</h4>
-                                    <div className="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
-                                        <span className="text-indigo-600 font-black text-[10px] uppercase tracking-widest block mb-4">Official Solution</span>
+                                    <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-6 sm:mb-8 pr-16 sm:pr-20 leading-snug">{prob.question}</h4>
+                                    <div className="bg-indigo-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border-l-4 border-indigo-600">
+                                        <span className="text-indigo-600 font-black text-[9px] sm:text-[10px] uppercase tracking-widest block mb-3 sm:mb-4">Official Solution</span>
                                         <MathText text={prob.solution} />
                                     </div>
                                 </div>

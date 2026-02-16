@@ -132,14 +132,19 @@ export default function AIChatBot() {
     // Calculate window size based on state
     const getWindowStyles = () => {
         if (isMinimized) return { height: '64px', width: 'min(300px, 80vw)' };
-        if (isMaximized) return { height: 'min(800px, 90vh)', width: 'min(1200px, 70vw)' };
-        return { height: 'min(640px, 85vh)', width: 'min(420px, 90vw)' };
+        if (isMaximized) return { height: 'min(800px, 92vh)', width: 'min(1200px, 95vw)' };
+        return { height: 'min(640px, 75vh)', width: 'min(420px, 92vw)' };
     };
 
     const windowStyles = getWindowStyles();
 
     return (
-        <div className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[9999] font-sans pointer-events-none transition-all duration-300 ${isMaximized ? 'w-full h-full flex items-end justify-end p-6' : ''}`}>
+        <div
+            className={`fixed z-[9999] font-sans pointer-events-none ${isMaximized
+                    ? 'inset-0 p-2 md:p-6 flex items-end justify-end'
+                    : 'bottom-4 right-4 md:bottom-6 md:right-6'
+                }`}
+        >
             <AnimatePresence>
                 {isOpen && (
                     <>

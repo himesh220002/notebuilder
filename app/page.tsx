@@ -17,8 +17,8 @@ export default function Home() {
 
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 2xl:px-16 py-16">
         {/* Header */}
-        <header className="text-center py-20 mb-20 border-b-2 border-gradient-to-r from-blue-300 via-indigo-300 to-purple-300">
-          <h1 className="text-7xl text-center md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 mb-6">
+        <header className="text-center py-6 sm:py-12 md:py-16 lg:py-20 mb-20 border-b-2 border-gradient-to-r from-blue-300 via-indigo-300 to-purple-300">
+          <h1 className="text-3xl text-center md:text-6xl lg:text-7xl xl:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 mb-6">
             Mathematics Notes
           </h1>
           <p className="text-2xl text-gray-700 mb-4 font-bold">Class 11 Applied Mathematics</p>

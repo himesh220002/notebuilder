@@ -220,7 +220,7 @@ export default function CompoundInterestChapter() {
                 <section className="mb-24 bg-white rounded-[3rem] p-12 shadow-2xl border border-slate-100">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                         <div>
-                            <h2 className="text-5xl font-black text-slate-900 mb-2 flex items-center gap-3">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-slate-900 mb-2 flex items-center gap-3">
                                 Case Studies <span className="text-indigo-600">&</span> Problems
                             </h2>
                             <p className="text-slate-500 font-medium tracking-tight">Real-world applications of compound interest and annuities.</p>
