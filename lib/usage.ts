@@ -15,33 +15,51 @@ const DEFAULT_USAGE: UsageData = {
     lastReset: new Date().toLocaleDateString('en-US')
 };
 
+// In-memory fallback if filesystem is read-only
+let memoryUsage: UsageData = { ...DEFAULT_USAGE };
+
 function ensureDataDir() {
-    const dir = path.dirname(USAGE_FILE);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+    try {
+        const dir = path.dirname(USAGE_FILE);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+    } catch (e) {
+        console.warn('Failed to ensure data directory:', e);
     }
 }
 
 export function getUsage(): UsageData {
-    ensureDataDir();
-    if (!fs.existsSync(USAGE_FILE)) {
-        fs.writeFileSync(USAGE_FILE, JSON.stringify(DEFAULT_USAGE, null, 2));
-        return DEFAULT_USAGE;
-    }
-
     try {
+        ensureDataDir();
+        if (!fs.existsSync(USAGE_FILE)) {
+            try {
+                fs.writeFileSync(USAGE_FILE, JSON.stringify(DEFAULT_USAGE, null, 2));
+            } catch (e) {
+                // Ignore write fail, use memory
+            }
+            return memoryUsage;
+        }
+
         const data = JSON.parse(fs.readFileSync(USAGE_FILE, 'utf8')) as UsageData;
         const today = new Date().toLocaleDateString('en-US');
 
         if (data.lastReset !== today) {
-            const newData = { ...data, count: 0, lastReset: today };
-            fs.writeFileSync(USAGE_FILE, JSON.stringify(newData, null, 2));
-            return newData;
+            data.count = 0;
+            data.lastReset = today;
+            try {
+                fs.writeFileSync(USAGE_FILE, JSON.stringify(data, null, 2));
+            } catch (e) {
+                // Ignore write fail
+            }
         }
 
+        // Sync memory usage with file data
+        memoryUsage = { ...data };
         return data;
     } catch (e) {
-        return DEFAULT_USAGE;
+        console.error('Error in getUsage:', e);
+        return memoryUsage;
     }
 }
 
@@ -58,6 +76,12 @@ export function incrementUsage(actualCount?: number, actualLimit?: number): Usag
         data.count += 1;
     }
 
-    fs.writeFileSync(USAGE_FILE, JSON.stringify(data, null, 2));
+    try {
+        fs.writeFileSync(USAGE_FILE, JSON.stringify(data, null, 2));
+    } catch (e) {
+        console.warn('Failed to save usage to file, keeping in memory:', e);
+    }
+
+    memoryUsage = { ...data };
     return data;
 }
