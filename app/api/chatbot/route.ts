@@ -1,8 +1,26 @@
 import { NextResponse } from 'next/server';
+import { getUsage, incrementUsage } from '@/lib/usage';
+
+export async function GET() {
+    return NextResponse.json(getUsage());
+}
 
 export async function POST(req: Request) {
     try {
         const { message, context, history } = await req.json();
+
+        // Check current usage BEFORE calling Gemini
+        const currentUsage = getUsage();
+        if (currentUsage.count >= currentUsage.limit) {
+            return NextResponse.json(
+                {
+                    error: 'Daily quota exceeded',
+                    message: `Daily limit reached (${currentUsage.count}/${currentUsage.limit}). Please try again tomorrow.`,
+                    quotaInfo: { current: currentUsage.count, limit: currentUsage.limit }
+                },
+                { status: 429 }
+            );
+        }
 
         const apiKey = process.env.GEMINI_API_KEY;
         if (!apiKey) {
@@ -68,11 +86,16 @@ STRICT FORMATTING RULES:
             // Regex to match patterns like "22/20" or "quota reached"
             const quotaMatch = errorMessage.match(/(\d+)\/(\d+)/);
 
+            let updatedUsage = currentUsage;
+            if (quotaMatch) {
+                updatedUsage = incrementUsage(parseInt(quotaMatch[1]), parseInt(quotaMatch[2]));
+            }
+
             return NextResponse.json(
                 {
                     error: 'Failed to get response from Gemini provider',
                     message: errorMessage,
-                    quotaInfo: quotaMatch ? { current: parseInt(quotaMatch[1]), limit: parseInt(quotaMatch[2]) } : null
+                    quotaInfo: { current: updatedUsage.count, limit: updatedUsage.limit }
                 },
                 { status: response.status }
             );
@@ -80,10 +103,16 @@ STRICT FORMATTING RULES:
 
         const data = await response.json();
 
+        // Success: Increment global usage
+        const updatedUsage = incrementUsage();
+
         // Extract reply from Gemini response structure
         const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "I couldn't generate a response.";
 
-        return NextResponse.json({ reply });
+        return NextResponse.json({
+            reply,
+            quotaInfo: { current: updatedUsage.count, limit: updatedUsage.limit }
+        });
     } catch (error) {
         console.error('Chatbot API Error:', error);
         return NextResponse.json(

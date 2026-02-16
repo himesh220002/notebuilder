@@ -26,33 +26,34 @@ export default function AIChatBot() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const abortControllerRef = useRef<AbortController | null>(null);
 
-    // Load and reset usage limit
+    // Load and reset usage limit from server
     useEffect(() => {
-        const storedCount = localStorage.getItem('chatbot_request_count');
-        const storedDate = localStorage.getItem('chatbot_last_reset_date');
-        const storedLimit = localStorage.getItem('chatbot_daily_limit');
-        const today = new Date().toLocaleDateString();
+        const fetchInitialUsage = async () => {
+            try {
+                const response = await fetch('/api/chatbot');
+                const data = await response.json();
+                if (data.count !== undefined && data.limit !== undefined) {
+                    setRequestCount(data.count);
+                    setDailyLimit(data.limit);
+                }
+            } catch (error) {
+                console.error("Failed to fetch initial usage:", error);
+                // Fallback to local storage for the limit only, count should be server-driven
+                const storedLimit = localStorage.getItem('chatbot_daily_limit');
+                if (storedLimit) setDailyLimit(Number(storedLimit));
+            }
+        };
 
-        if (storedDate !== today) {
-            localStorage.setItem('chatbot_request_count', '0');
-            localStorage.setItem('chatbot_last_reset_date', today);
-            setRequestCount(0);
-            setLastResetDate(today);
-        } else {
-            setRequestCount(Number(storedCount) || 0);
-            setLastResetDate(storedDate || today);
-        }
-
-        if (storedLimit) {
-            setDailyLimit(Number(storedLimit));
-        }
+        fetchInitialUsage();
     }, []);
 
-    // Helper to increment usage
+    // Helper to increment usage (UI only, server handles persistence)
     const incrementUsage = (actualCount?: number, actualLimit?: number) => {
-        const newCount = actualCount !== undefined ? actualCount : requestCount + 1;
-        setRequestCount(newCount);
-        localStorage.setItem('chatbot_request_count', newCount.toString());
+        if (actualCount !== undefined) {
+            setRequestCount(actualCount);
+        } else {
+            setRequestCount(prev => prev + 1);
+        }
 
         if (actualLimit !== undefined) {
             setDailyLimit(actualLimit);
@@ -111,7 +112,6 @@ export default function AIChatBot() {
 
             if (data.reply) {
                 setMessages(prev => [...prev, { role: 'bot', content: data.reply }]);
-                if (!data.quotaInfo) incrementUsage();
             } else if (response.status === 429 || data.quotaInfo) {
                 const limitMsg = data.quotaInfo
                     ? `Daily limit reached (${data.quotaInfo.current}/${data.quotaInfo.limit}). Please try again tomorrow.`

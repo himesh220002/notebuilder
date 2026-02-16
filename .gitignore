@@ -30,6 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# local env files
+.env*.local
+
+# tracking file
+data/usage.json
+
 # env files (can opt-in for committing if needed)
 .env*
 
